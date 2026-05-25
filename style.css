@@ -128,13 +128,13 @@ h1,h2,h3,h4{font-family:'Noto Kufi Arabic',sans-serif;color:var(--text);line-hei
 /* ─── Navbar ────────────────────────────────────────────────── */
 .navbar {
   position: fixed; top: 0; right: 0; left: 0; z-index: 1000;
-  background: rgba(13,26,58,.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(201,168,76,.12);
+  background: rgba(5,8,16,.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,.10);
   transition: var(--t);
 }
-.navbar.scrolled { background: rgba(13,26,58,.98); box-shadow: 0 4px 32px rgba(0,0,0,.3); }
+.navbar.scrolled { background: rgba(5,8,16,.97); box-shadow: 0 4px 32px rgba(0,0,0,.4); }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 68px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;

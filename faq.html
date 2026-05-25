@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسئلة الشائعة | رواية تك</title>
+  <meta name="description" content="أجوبة شاملة على أكثر الأسئلة شيوعاً حول خدمات رواية تك لتصميم مواقع العيادات الطبية السعودية." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-cat-btn {
+      background: var(--white);
+      border: 2px solid var(--light-gray);
+      color: var(--text-body);
+      padding: .5rem 1.3rem;
+      border-radius: 50px;
+      font-size: .88rem;
+      font-weight: 700;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .faq-cat-btn:hover,
+    .faq-cat-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .faq-section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      padding: .6rem 1rem;
+      background: var(--light-gray);
+      border-radius: var(--radius-sm);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .still-question {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .still-question h3 { color: var(--white); font-size: 1.4rem; margin-bottom: .7rem; }
+    .still-question p  { color: rgba(255,255,255,.7); font-size: .9rem; margin-bottom: 1.5rem; }
+
+    .faq-search {
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .faq-search input {
+      width: 100%;
+      background: var(--white);
+      border: 2px solid var(--light-gray);
+      border-radius: 50px;
+      padding: .85rem 3rem .85rem 1.5rem;
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      font-size: .92rem;
+      color: var(--text-dark);
+      direction: rtl;
+      text-align: right;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .faq-search input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(27,43,94,.08);
+    }
+
+    .faq-search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--mid-gray);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">ر</div>
+      <div class="nav-logo-text">
+        <span class="brand">رواية تك</span>
+        <span class="tagline">Roaya Tech Agency</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="portfolio.html">أعمالنا</a>
+      <a href="about.html">من نحن</a>
+      <a href="faq.html" class="active">الأسئلة الشائعة</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        واتساب
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">🏠 الرئيسية</a>
+  <a href="services.html">⚡ خدماتنا</a>
+  <a href="portfolio.html">🎨 أعمالنا</a>
+  <a href="about.html">👥 من نحن</a>
+  <a href="faq.html">❓ الأسئلة الشائعة</a>
+  <a href="contact.html">📞 تواصل معنا</a>
+  <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn" style="margin-top:.5rem;justify-content:center;display:flex;">واتساب</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title" data-aos="fade-up">الأسئلة <span>الشائعة</span></h1>
+    <p class="page-hero-sub" data-aos="fade-up">أجوبة شاملة وصادقة على كل ما يدور في ذهنك</p>
+    <div class="page-hero-breadcrumb">
+      <a href="index.html">الرئيسية</a><span>/</span><span>الأسئلة الشائعة</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section">
+  <div class="container">
+
+    <!-- Search -->
+    <div class="faq-search" data-aos="fade-up">
+      <input type="text" id="faqSearch" placeholder="ابحث عن سؤالك..." oninput="searchFaq(this.value)" />
+      <span class="faq-search-icon">🔍</span>
+    </div>
+
+    <div style="max-width:800px;margin:0 auto;" id="faqContainer">
+
+      <!-- Category 1: Time & Process -->
+      <div class="faq-section-title" data-aos="fade-up">⏱ المدة والعملية</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          كم من الوقت يستغرق بناء الموقع؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            يتوقف ذلك على الباقة التي تختارها:
+            <ul style="margin-top:.7rem;padding-right:1.2rem;list-style:disc;">
+              <li style="margin-bottom:.4rem;"><strong>الباقة الأساسية:</strong> 5 أيام عمل</li>
+              <li style="margin-bottom:.4rem;"><strong>الباقة المتقدمة:</strong> 7 أيام عمل</li>
+              <li style="margin-bottom:.4rem;"><strong>الباقة المميزة:</strong> 10 أيام عمل</li>
+            </ul>
+            نلتزم دائماً بهذه المواعيد. وإذا تأخرنا لأي سبب، نعوضك بخصم على خدمات الصيانة.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ما الذي أحتاج لتجهيزه قبل بدء المشروع؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            لا تحتاج الكثير في البداية. نساعدك في معظم الأمور. لكن يفيد جداً أن تُجهّز:
+            <ul style="margin-top:.7rem;padding-right:1.2rem;list-style:disc;">
+              <li>شعار عيادتك (لوجو) — إذا لم يكن لديك، نصمم لك واحداً</li>
+              <li>صور الأطباء والعيادة — أو نستخدم صوراً احترافية مجانية</li>
+              <li>قائمة الخدمات التي تقدمها</li>
+              <li>رقم واتساب للتواصل وبيانات التواصل</li>
+            </ul>
+            الباقي يُترك لنا — نحن نتولى المحتوى والتصميم والتقنية كاملاً.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          كم عدد التعديلات المسموح بها؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نُتيح جولتين كاملتين من التعديلات لجميع الباقات بعد عرض النسخة الأولى. في الباقة المميزة، نتيح ثلاث جولات. وإذا كانت التعديلات بسيطة مثل تغيير نصوص أو ألوان، نطبقها فوراً بدون احتسابها من جولات التعديل.</div>
+        </div>
+      </div>
+
+      <!-- Category 2: Packages & Pricing -->
+      <div class="faq-section-title" data-aos="fade-up">💰 الباقات والأسعار</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ما الفرق بين الباقات الثلاث؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            الفرق الأساسي في عدد الصفحات والميزات:
+            <ul style="margin-top:.7rem;padding-right:1.2rem;list-style:disc;">
+              <li><strong>الأساسية (1,500 ر.س):</strong> 3 صفحات، تصميم متجاوب، زر واتساب — مثالية للعيادات التي تبدأ حضورها الرقمي</li>
+              <li><strong>المتقدمة (2,800 ر.س):</strong> 5 صفحات، حجز المواعيد، SEO، معرض صور — الأكثر طلباً والأنسب لمعظم العيادات</li>
+              <li><strong>المميزة (4,500 ر.س):</strong> صفحات غير محدودة، ثنائية اللغة، SEO متقدم، 3 أشهر صيانة — لعيادات تريد التميز الكامل</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ما هي طرق الدفع المقبولة؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نقبل جميع طرق الدفع الشائعة في المملكة العربية السعودية: التحويل البنكي، مدى، فيزا، وماستركارد. طريقة الدفع: 50% مقدماً عند بدء المشروع، والـ 50% المتبقية عند الموافقة على النسخة النهائية قبل الإطلاق.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل هناك رسوم شهرية بعد التسليم؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">لا توجد رسوم شهرية إلزامية من رواية تك. الموقع ملكك الكامل بعد التسليم. الشيء الوحيد الذي يتطلب تجديداً سنوياً هو الاستضافة والنطاق (الدومين)، وتكلفتهما رمزية تتراوح بين 300-600 ريال سنوياً. نوفر خطط صيانة اختيارية لمن يريد دعماً مستمراً.</div>
+        </div>
+      </div>
+
+      <!-- Category 3: Technical -->
+      <div class="faq-section-title" data-aos="fade-up">🔧 الجانب التقني</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل أحتاج خبرة تقنية لإدارة الموقع؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">لا تحتاج أي خبرة تقنية على الإطلاق. نُسلّمك الموقع جاهزاً بالكامل. إذا أردت تعديل محتوى بسيط مثل إضافة طبيب جديد أو تغيير ساعات العمل، نُقدم لك جلسة تدريب قصيرة ومجانية. وإذا لم تشأ التعامل مع الموقع بنفسك، يمكنك التواصل معنا في أي وقت لنتولى التعديلات نيابةً عنك.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل يمكنني تحديث محتوى الموقع بنفسي؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نعم، يمكنك تحديث المحتوى الأساسي بنفسك. نُقدم لك لوحة تحكم بسيطة لتعديل النصوص والصور. للتعديلات الأعمق مثل إضافة صفحات جديدة أو تغيير التصميم، يُفضل التواصل معنا لضمان ظهور الموقع بأفضل شكل.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل توفرون خدمة الاستضافة والنطاق؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نعم. يمكننا مساعدتك في تسجيل النطاق (اسم الموقع مثل: yourClinic.sa) وتوفير الاستضافة بأسعار تنافسية. يمكنك أيضاً استخدام استضافتك الخاصة وسنتولى رفع الموقع عليها مجاناً. نُنصح باختيار نطاق بامتداد .sa للمصداقية في السوق السعودي.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل يمكنكم إضافة نظام حجز المواعيد؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">بالطبع. نظام حجز المواعيد متاح في الباقة المتقدمة والمميزة. يتيح للمرضى اختيار التخصص، الطبيب، اليوم والوقت المناسب. عند إتمام الحجز، تصلك ويصل المريض رسالة تأكيد تلقائية عبر واتساب. هذه الميزة تقلل الضغط على موظفي الاستقبال بشكل ملحوظ.</div>
+        </div>
+      </div>
+
+      <!-- Category 4: Content & Language -->
+      <div class="faq-section-title" data-aos="fade-up">🌐 المحتوى واللغة</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل يمكن بناء الموقع باللغتين العربية والإنجليزية؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نعم، هذه الميزة متاحة في الباقة المميزة. يمكن للزائر التبديل بين اللغتين بنقرة واحدة. خاصةً مناسبة للعيادات التي تستقبل عملاء غير عرب أو التي تستهدف مرضى من جنسيات مختلفة. في الباقات الأخرى يمكن إضافتها كخيار مدفوع منفصل.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          من يكتب محتوى الموقع (النصوص)؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">يمكنك تزويدنا بالمحتوى إذا كان لديك، أو يمكننا كتابة محتوى احترافي لعيادتك بناءً على المعلومات التي تشاركها معنا. كتابة المحتوى الأساسي مشمولة في الباقة — نكتب لك وصف الخدمات، معلومات الأطباء، وصفحة التواصل. المحتوى التسويقي المتخصص يمكن إضافته بتكلفة إضافية.</div>
+        </div>
+      </div>
+
+      <!-- Category 5: After Delivery -->
+      <div class="faq-section-title" data-aos="fade-up">🛡 بعد التسليم</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ماذا يحدث بعد تسليم الموقع؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            عند التسليم تحصل على:
+            <ul style="margin-top:.7rem;padding-right:1.2rem;list-style:disc;">
+              <li>ملفات الموقع كاملة ملكاً لك</li>
+              <li>جلسة تدريب مجانية على إدارة الموقع</li>
+              <li>دعم تقني مجاني (شهر في الأساسية، شهران في المتقدمة، 3 أشهر في المميزة)</li>
+              <li>تقرير أداء أولي خلال أول أسبوعين</li>
+            </ul>
+            بعد انتهاء فترة الدعم المجاني، يمكنك الاشتراك في خطة الصيانة الشهرية.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل تقدمون دعماً بعد الإطلاق؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نعم، نُقدم دعماً تقنياً مجانياً خلال فترة الضمان المحددة لكل باقة. بعدها، لدينا خطط صيانة شهرية اختيارية تشمل: تحديث المحتوى، إصلاح أي أعطال، تحسينات الأداء، وتقارير دورية. أسعار خطط الصيانة تبدأ من 200 ريال شهرياً.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل يمكنني إضافة خدمات جديدة للموقع لاحقاً؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">بالطبع. موقعك مبني ليكون قابلاً للتطوير في أي وقت. يمكنك لاحقاً إضافة صفحات جديدة، خدمات، معرض صور، نظام حجز إذا لم يكن موجوداً، أو أي ميزة أخرى. كل إضافة تُسعّر بشكل منفصل وشفاف بدون مفاجآت.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ماذا لو لم أكن راضياً عن النتيجة النهائية؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نحن واثقون من جودة عملنا، ونعمل على التعديل المستمر حتى ترضى تماماً. وإذا قدّمنا جميع جولات التعديل المتفق عليها ولم تصل لرضاك الكامل، نُعيد لك المبلغ كاملاً خلال 14 يوماً من تاريخ عرض النسخة النهائية. رضاك هو أساس عملنا.</div>
+        </div>
+      </div>
+
+      <!-- Category 6: SEO & Marketing -->
+      <div class="faq-section-title" data-aos="fade-up">📈 SEO والتسويق</div>
+
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          هل تحسين محركات البحث (SEO) يجلب مرضى فعلاً؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">نعم، لكن يتطلب وقتاً. تحسين SEO يعني أن موقعك يظهر في Google عندما يبحث مريض عن "طبيب أسنان في الرياض" مثلاً. النتائج تبدأ تظهر بعد 2-3 أشهر من الإطلاق وتتحسن مع الوقت. العيادات التي نعمل معها لاحظت زيادة ملموسة في استفسارات المرضى الجدد خلال الأشهر الثلاثة الأولى.</div>
+        </div>
+      </div>
+
+    </div><!-- end faqContainer -->
+
+    <!-- Still Have Questions -->
+    <div class="still-question" data-aos="fade-up">
+      <h3>لم تجد إجابة سؤالك؟</h3>
+      <p>تواصل معنا مباشرة وسنجيبك في أقل من ساعتين — وعدنا</p>
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1rem;">
+        <a href="https://wa.me/966500000000?text=عندي سؤال عن خدماتكم" target="_blank" class="btn btn-whatsapp btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          اسألنا عبر واتساب
+        </a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg">أرسل رسالة</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:.8rem;display:inline-flex;">
+          <div class="nav-logo-icon">ر</div>
+          <div class="nav-logo-text">
+            <span class="brand">رواية تك</span>
+            <span class="tagline">Roaya Tech Agency</span>
+          </div>
+        </a>
+        <p class="footer-brand-text">وكالة متخصصة في تصميم المواقع الإلكترونية الاحترافية للعيادات والمراكز الطبية السعودية.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">📷</a>
+          <a href="#" class="social-icon">in</a>
+          <a href="https://wa.me/966500000000" target="_blank" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">› الرئيسية</a></li>
+          <li><a href="services.html">› خدماتنا</a></li>
+          <li><a href="portfolio.html">› أعمالنا</a></li>
+          <li><a href="about.html">› من نحن</a></li>
+          <li><a href="contact.html">› تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">خدماتنا</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">› تصميم مواقع العيادات</a></li>
+          <li><a href="services.html">› تصميم متجاوب</a></li>
+          <li><a href="services.html">› حجز المواعيد</a></li>
+          <li><a href="services.html">› تحسين SEO</a></li>
+          <li><a href="services.html">› صيانة المواقع</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">تواصل معنا</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">📱</div>
+          <div><div style="color:var(--white);font-weight:600;">واتساب</div><div>+966 50 000 0000</div></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">✉</div>
+          <div><div style="color:var(--white);font-weight:600;">البريد</div><div>info@roayatech.sa</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>رواية تك</span> — جميع الحقوق محفوظة</div>
+</footer>
+
+<a href="https://wa.me/966500000000" target="_blank" class="float-wa">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+</a>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function searchFaq(query) {
+    const q = query.trim().toLowerCase();
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!q || text.includes(q)) ? 'block' : 'none';
+    });
+    document.querySelectorAll('.faq-section-title').forEach(title => {
+      title.style.display = q ? 'none' : 'flex';
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('aos-animate'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('[data-aos]').forEach(el => {
+    el.style.transitionDelay = (el.dataset.aosDelay || 0) + 'ms';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

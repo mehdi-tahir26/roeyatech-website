@@ -739,7 +739,7 @@
       <span class="gold-line"></span>
       <p class="section-sub mt2">كل ما هو مذكور مشمول في السعر. لا رسوم خفية، لا إضافات مفاجئة</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:start;" data-aos="fade-up">
+    <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:start;" data-aos="fade-up">
       <!-- Basic -->
       <div class="price-card">
         <div class="price-head">
@@ -811,8 +811,8 @@
       تحتاج شيئاً مختلفاً؟ <a href="https://wa.me/966500000000" target="_blank" style="color:var(--navy);font-weight:700;text-decoration:underline;">نصمم لك باقة مخصصة</a>
     </p>
     <style>
-    @media(max-width:768px){
-      [data-aos="fade-up"] + div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
+    @media(max-width:900px){
+      .pricing-grid{grid-template-columns:1fr !important;}
       .price-card.featured{transform:none !important;}
     }
     </style>

@@ -4,111 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>خدماتنا | رواية تك</title>
-  <meta name="description" content="خدمات رواية تك لتصميم مواقع العيادات السعودية — تصميم احترافي، حجز مواعيد، SEO، صيانة، وأكثر." />
+  <meta name="description" content="خدمات رواية تك — تصميم مواقع، حجز مواعيد، SEO، وكل ما تحتاجه عيادتك رقمياً." />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .services-full-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem;
-    }
-    .service-num {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: rgba(27,43,94,.06);
-      line-height: 1;
-      margin-bottom: .3rem;
-      font-family: 'Noto Kufi Arabic', sans-serif;
-    }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-    .comparison-table th {
-      background: var(--navy);
-      color: var(--white);
-      padding: 1.1rem 1.3rem;
-      font-size: .9rem;
-      font-weight: 700;
-      text-align: center;
-    }
-    .comparison-table th:first-child { text-align: right; }
-    .comparison-table td {
-      padding: .9rem 1.3rem;
-      font-size: .88rem;
-      color: var(--text-body);
-      border-bottom: 1px solid var(--light-gray);
-      text-align: center;
-      background: var(--white);
-    }
-    .comparison-table td:first-child { text-align: right; font-weight: 600; color: var(--text-dark); }
-    .comparison-table tr:last-child td { border-bottom: none; }
-    .comparison-table tr:nth-child(even) td { background: var(--off-white); }
-    .comparison-table .featured-col { background: rgba(201,168,76,.06) !important; }
-    .comparison-table th.featured-col { background: var(--gold); }
-    .check-icon { color: var(--green-wa); font-size: 1.1rem; }
-    .cross-icon { color: #ccc; font-size: 1.1rem; }
-
-    .process-timeline {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .process-timeline::before {
-      content: '';
-      position: absolute;
-      right: 28px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--navy), var(--gold), var(--navy));
-    }
-    .timeline-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .timeline-dot {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 900;
-      flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(27,43,94,.3);
-      z-index: 1;
-    }
-    .timeline-content {
-      flex: 1;
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      padding: 1.3rem 1.5rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--light-gray);
-      margin-top: .5rem;
-    }
-    .timeline-title { font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
-    .timeline-text  { font-size: .88rem; color: var(--text-body); }
-
-    @media (max-width: 768px) {
-      .services-full-grid { grid-template-columns: 1fr; }
-      .comparison-table { font-size: .8rem; }
-      .comparison-table th, .comparison-table td { padding: .7rem .6rem; }
-    }
-    @media (max-width: 480px) {
-      .process-timeline::before { display: none; }
-    }
-  </style>
 </head>
 <body>
 
@@ -117,10 +14,7 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon">ر</div>
-      <div class="nav-logo-text">
-        <span class="brand">رواية تك</span>
-        <span class="tagline">Roaya Tech Agency</span>
-      </div>
+      <div class="nav-logo-text"><span class="brand">رواية تك</span><span class="tag">Roaya Tech Agency</span></div>
     </a>
     <div class="nav-links">
       <a href="index.html">الرئيسية</a>
@@ -131,130 +25,156 @@
       <a href="contact.html">تواصل معنا</a>
     </div>
     <div class="nav-cta">
-      <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+      <a href="https://wa.me/966500000000" target="_blank" class="nav-wa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
         واتساب
       </a>
     </div>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">🏠 الرئيسية</a>
-  <a href="services.html">⚡ خدماتنا</a>
-  <a href="portfolio.html">🎨 أعمالنا</a>
-  <a href="about.html">👥 من نحن</a>
-  <a href="faq.html">❓ الأسئلة الشائعة</a>
-  <a href="contact.html">📞 تواصل معنا</a>
-  <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn" style="margin-top:.5rem;justify-content:center;display:flex;">واتساب</a>
+  <a href="index.html">الرئيسية</a>
+  <a href="services.html">خدماتنا</a>
+  <a href="portfolio.html">أعمالنا</a>
+  <a href="about.html">من نحن</a>
+  <a href="faq.html">الأسئلة الشائعة</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a href="https://wa.me/966500000000" target="_blank" class="nav-wa" style="margin-top:.7rem;justify-content:center;display:flex;">تواصل عبر واتساب</a>
 </div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <h1 class="page-hero-title" data-aos="fade-up">خدماتنا <span>المتكاملة</span></h1>
-    <p class="page-hero-sub" data-aos="fade-up">كل ما تحتاجه عيادتك لتحقيق حضور رقمي استثنائي</p>
+    <span class="eyebrow">ما نقدمه</span>
+    <h1 class="page-hero-title">خدماتنا <span>المتكاملة</span></h1>
+    <p class="page-hero-sub">كل ما تحتاجه عيادتك رقمياً — في مكان واحد</p>
     <div class="page-hero-breadcrumb">
-      <a href="index.html">الرئيسية</a><span>/</span><span>خدماتنا</span>
+      <a href="index.html">الرئيسية</a> <span>›</span> <span>خدماتنا</span>
     </div>
   </div>
 </section>
 
-<!-- SERVICES FULL -->
+<!-- MAIN SERVICES -->
 <section class="section">
   <div class="container">
     <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">ما نقدمه</span>
-      <h2 class="section-title">خدمات صُممت خصيصاً للعيادات</h2>
-      <div class="gold-divider"></div>
-      <p class="section-sub mt-3">نفهم احتياجات القطاع الطبي بعمق ونقدم حلولاً رقمية تبني الثقة وتجذب المرضى</p>
+      <span class="eyebrow">الخدمات الرئيسية</span>
+      <h2 class="section-title">كل خدمة مبنية لتحقق نتيجة</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">لا نبيع مجرد مواقع — نبني أدوات تسويق تشتغل لعيادتك حتى وأنت نائم</p>
     </div>
 
-    <div class="services-full-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="service-num">01</div>
-        <div class="service-icon">🎨</div>
-        <h3 class="service-title">تصميم موقع احترافي</h3>
-        <p class="service-text">نصمم موقعاً فريداً يعكس هوية عيادتك وقيمها الطبية. نهتم بكل تفصيل من الألوان والخطوط حتى ترتيب المحتوى بشكل يبني الثقة مع المريض فور وصوله للموقع.</p>
+    <div style="display:flex;flex-direction:column;gap:2.5rem;margin-top:1rem;">
+
+      <!-- Service 1 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--off);border-radius:var(--radius-xl);padding:3rem;border:1px solid var(--gray-lt);" data-aos="fade-up" class="srv-grid">
+        <div>
+          <div style="width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.2rem;">🎨</div>
+          <span class="eyebrow" style="margin-bottom:.6rem;">الخدمة الأساسية</span>
+          <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:.8rem;">تصميم موقع احترافي للعيادة</h3>
+          <p style="color:var(--text-body);line-height:1.85;margin-bottom:1.5rem;">موقع مبني من الصفر بهوية بصرية تعكس تخصصك، مصمم ليبني ثقة المريض من أول ثانية. نهتم بكل التفاصيل من الألوان والخطوط إلى طريقة عرض الخدمات والأطباء.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+            <span class="port-tag">تصميم فريد</span>
+            <span class="port-tag">هوية بصرية</span>
+            <span class="port-tag">UX احترافي</span>
+            <span class="port-tag">سرعة عالية</span>
+          </div>
+          <a href="https://wa.me/966500000000?text=أريد موقعاً احترافياً لعيادتي" target="_blank" class="btn btn-primary">استفسر الآن</a>
+        </div>
+        <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=700&q=80" alt="تصميم موقع احترافي" style="width:100%;height:280px;object-fit:cover;" loading="lazy" />
+        </div>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="service-num">02</div>
-        <div class="service-icon">📱</div>
-        <h3 class="service-title">تصميم متجاوب مع الجوال</h3>
-        <p class="service-text">موقعك يعمل بشكل مثالي على جميع الأجهزة — هواتف، أجهزة لوحية، وكمبيوتر. أكثر من 80% من المرضى يبحثون عبر الجوال، لذا نحرص على تجربة لا تُنسى.</p>
+
+      <!-- Service 2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--off);border-radius:var(--radius-xl);padding:3rem;border:1px solid var(--gray-lt);" data-aos="fade-up" class="srv-grid srv-rev">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="متجاوب مع الجوال" style="width:100%;height:280px;object-fit:cover;" loading="lazy" />
+        </div>
+        <div>
+          <div style="width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.2rem;">📱</div>
+          <span class="eyebrow" style="margin-bottom:.6rem;">ضرورة لا خيار</span>
+          <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:.8rem;">تصميم متجاوب مع الجوال</h3>
+          <p style="color:var(--text-body);line-height:1.85;margin-bottom:1.5rem;">85% من مرضاك يزورون موقعك من هواتفهم. موقعك يُختبر على كل الأجهزة والشاشات — iPhone، Samsung، iPad — ليعطي تجربة مثالية في كل مرة.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+            <span class="port-tag">iPhone & Android</span>
+            <span class="port-tag">جميع الشاشات</span>
+            <span class="port-tag">سرعة تحميل</span>
+          </div>
+          <a href="https://wa.me/966500000000?text=أريد موقعاً متجاوباً مع الجوال" target="_blank" class="btn btn-primary">استفسر الآن</a>
+        </div>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="service-num">03</div>
-        <div class="service-icon">💬</div>
-        <h3 class="service-title">تكامل واتساب الذكي</h3>
-        <p class="service-text">نربط موقعك بواتساب عيادتك بشكل احترافي مع رسائل مسبقة التخصيص، مما يجعل التواصل مع المرضى فورياً وسهلاً ويزيد من معدل التحويل.</p>
+
+      <!-- Service 3 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--off);border-radius:var(--radius-xl);padding:3rem;border:1px solid var(--gray-lt);" data-aos="fade-up" class="srv-grid">
+        <div>
+          <div style="width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.2rem;">🔍</div>
+          <span class="eyebrow" style="margin-bottom:.6rem;">مرضى جدد مجاناً</span>
+          <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:.8rem;">تحسين محركات البحث (SEO)</h3>
+          <p style="color:var(--text-body);line-height:1.85;margin-bottom:1.5rem;">عندما يبحث أحد في Google عن "طبيب أسنان في الرياض" — نريدك أن تظهر في الأول. نبني موقعك بنية تقنية مُحسَّنة لمحركات البحث من اليوم الأول.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+            <span class="port-tag">Google</span>
+            <span class="port-tag">كلمات مفتاحية طبية</span>
+            <span class="port-tag">خريطة الموقع</span>
+          </div>
+          <a href="https://wa.me/966500000000?text=أريد تحسين SEO لعيادتي" target="_blank" class="btn btn-primary">استفسر الآن</a>
+        </div>
+        <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&q=80" alt="تحسين SEO" style="width:100%;height:280px;object-fit:cover;" loading="lazy" />
+        </div>
       </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="service-num">04</div>
-        <div class="service-icon">📅</div>
-        <h3 class="service-title">نموذج حجز المواعيد</h3>
-        <p class="service-text">نموذج حجز ذكي يتيح للمرضى تحديد موعدهم مباشرة من الموقع — مع تأكيد تلقائي عبر واتساب، مما يقلل الضغط على موظفي الاستقبال.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="service-num">05</div>
-        <div class="service-icon">🔍</div>
-        <h3 class="service-title">تحسين محركات البحث (SEO)</h3>
-        <p class="service-text">نحسّن موقعك ليظهر في أعلى نتائج Google عندما يبحث المرضى عن "عيادة أسنان في الرياض" أو أي تخصص طبي في منطقتك. المرضى يجدونك قبل منافسيك.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="service-num">06</div>
-        <div class="service-icon">🔧</div>
-        <h3 class="service-title">صيانة وتحديث الموقع</h3>
-        <p class="service-text">نتولى صيانة موقعك بشكل منتظم، تحديث المحتوى، إضافة الخدمات الجديدة، وضمان أن الموقع يعمل بسرعة وكفاءة دائماً بدون أي انقطاع.</p>
-      </div>
+
     </div>
+
+    <style>
+    @media(max-width:768px){
+      .srv-grid{grid-template-columns:1fr !important;}
+      .srv-grid>div:last-child:not(:first-child){order:-1;}
+      .srv-rev>div:first-child{order:2;}
+    }
+    </style>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ADDITIONAL SERVICES -->
 <section class="section section-alt">
   <div class="container">
     <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">منهجيتنا</span>
-      <h2 class="section-title">كيف ننفّذ مشروعك؟</h2>
-      <div class="gold-divider"></div>
+      <span class="eyebrow">خدمات إضافية</span>
+      <h2 class="section-title">كل ما تحتاجه مشمول</h2>
+      <span class="gold-line"></span>
     </div>
-
-    <div class="process-timeline mt-4">
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="timeline-dot">١</div>
-        <div class="timeline-content">
-          <div class="timeline-title">الاستشارة الأولية المجانية</div>
-          <div class="timeline-text">نتواصل معك عبر واتساب أو مكالمة لفهم تخصصك، جمهورك المستهدف، وما تريده من موقعك. هذه الخطوة مجانية وبدون أي التزام.</div>
-        </div>
+    <div class="g3 mt4">
+      <div class="service-card" data-aos="fade-up">
+        <div class="service-icon">💬</div>
+        <h3 class="service-title">تكامل واتساب ذكي</h3>
+        <p class="service-text">زر واتساب مع رسالة مخصصة تجعل المريض يتواصل بنقرة واحدة. يمكن ربطه بأقسام مختلفة لتوجيه كل استفسار للمكان الصحيح.</p>
       </div>
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-        <div class="timeline-dot">٢</div>
-        <div class="timeline-content">
-          <div class="timeline-title">تقديم العرض والاتفاق</div>
-          <div class="timeline-text">نُرسل لك عرضاً مفصلاً يشمل التصميم المقترح، الباقة، السعر، والجدول الزمني. عند الموافقة نبدأ مباشرة.</div>
-        </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon">📅</div>
+        <h3 class="service-title">نموذج حجز المواعيد</h3>
+        <p class="service-text">نموذج حجز احترافي يرسل إشعاراً فورياً لك عند كل حجز جديد. يقلل الضغط على موظفيك ويزيد الحجوزات.</p>
       </div>
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-        <div class="timeline-dot">٣</div>
-        <div class="timeline-content">
-          <div class="timeline-title">التصميم والتطوير</div>
-          <div class="timeline-text">يبدأ فريقنا بتصميم النموذج الأولي (Wireframe) ثم يطور الموقع كاملاً مع جميع الصفحات والميزات المتفق عليها.</div>
-        </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon">🗺</div>
+        <h3 class="service-title">خريطة الموقع والعنوان</h3>
+        <p class="service-text">تضمين خريطة Google مع توجيهات وصول واضحة — المريض يصل عيادتك بسهولة بدون أي تواصل.</p>
       </div>
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-        <div class="timeline-dot">٤</div>
-        <div class="timeline-content">
-          <div class="timeline-title">المراجعة والتعديل</div>
-          <div class="timeline-text">ترى الموقع كاملاً وتعطينا ملاحظاتك. نُطبّق التعديلات المطلوبة — جولتان من التعديل مشمولتان في جميع الباقات.</div>
-        </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon">🌐</div>
+        <h3 class="service-title">نسخة إنجليزية</h3>
+        <p class="service-text">للعيادات التي تخدم مرضى أجانب أو مقيمين — نضيف نسخة إنجليزية احترافية مع تبديل سلس بين اللغتين.</p>
       </div>
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
-        <div class="timeline-dot">٥</div>
-        <div class="timeline-content">
-          <div class="timeline-title">الإطلاق والتسليم</div>
-          <div class="timeline-text">نرفع الموقع على الإنترنت، نتأكد من عمل كل شيء بشكل مثالي، ونُسلّمك ملفات المشروع كاملة مع جلسة تدريب قصيرة.</div>
-        </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon">🛡</div>
+        <h3 class="service-title">صيانة ودعم مستمر</h3>
+        <p class="service-text">لا تُترك وحدك بعد الإطلاق. دعم تقني، تحديث محتوى، وضمان عمل الموقع دائماً بأعلى أداء.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon">📊</div>
+        <h3 class="service-title">تقارير الأداء الشهرية</h3>
+        <p class="service-text">تقرير شهري يُظهر كم زائراً جاء لموقعك، من أين جاؤوا، وما الصفحات التي يتفاعلون معها أكثر.</p>
       </div>
     </div>
   </div>
@@ -264,166 +184,101 @@
 <section class="section">
   <div class="container">
     <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">الأسعار</span>
-      <h2 class="section-title">باقات واضحة وبدون مفاجآت</h2>
-      <div class="gold-divider"></div>
-      <p class="section-sub mt-3">اختر الباقة التي تناسب احتياجات عيادتك — جميع الأسعار بالريال السعودي</p>
+      <span class="eyebrow">الأسعار</span>
+      <h2 class="section-title">اختر الباقة المناسبة لعيادتك</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">أسعار شفافة — بدون رسوم خفية أو مفاجآت</p>
     </div>
-
-    <div class="pricing-grid" data-aos="fade-up">
-      <!-- Basic -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة الأساسية</div>
-          <div class="pricing-price"><sub>ر.س </sub>1,500</div>
-          <div class="pricing-period">دفعة واحدة — يُسلّم خلال 5 أيام</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:start;margin-top:2rem;" data-aos="fade-up">
+      <div class="price-card">
+        <div class="price-head">
+          <div class="price-name">الأساسية</div>
+          <div class="price-amount"><sub>ر.س </sub>1,500</div>
+          <div class="price-note">تسليم في 5 أيام</div>
         </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> 3 صفحات (رئيسية، خدمات، تواصل)</div>
-          <div class="pricing-feature"><span class="check">✓</span> تصميم متجاوب مع الجوال</div>
-          <div class="pricing-feature"><span class="check">✓</span> زر واتساب للتواصل</div>
-          <div class="pricing-feature"><span class="check">✓</span> معلومات العيادة والأطباء</div>
-          <div class="pricing-feature"><span class="check">✓</span> صور احترافية مجانية</div>
-          <div class="pricing-feature"><span class="check">✓</span> شهر دعم تقني مجاني</div>
-          <div class="pricing-feature"><span class="cross">✕</span> نموذج حجز المواعيد</div>
-          <div class="pricing-feature"><span class="cross">✕</span> تحسين محركات البحث</div>
-          <div class="pricing-feature"><span class="cross">✕</span> نسخة عربية وإنجليزية</div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> 3 صفحات احترافية</div>
+          <div class="price-feat"><span class="y">✓</span> تصميم متجاوب</div>
+          <div class="price-feat"><span class="y">✓</span> زر واتساب</div>
+          <div class="price-feat"><span class="y">✓</span> معلومات العيادة والأطباء</div>
+          <div class="price-feat"><span class="y">✓</span> خريطة الموقع</div>
+          <div class="price-feat"><span class="y">✓</span> شهر دعم مجاني</div>
+          <div class="price-feat"><span class="n">✕</span> نموذج حجز مواعيد</div>
+          <div class="price-feat"><span class="n">✕</span> تحسين SEO</div>
+          <div class="price-feat"><span class="n">✕</span> معرض الصور</div>
+          <div class="price-feat"><span class="n">✕</span> نسخة إنجليزية</div>
         </div>
-        <div class="pricing-footer">
-          <a href="https://wa.me/966500000000?text=أريد الباقة الأساسية — 1500 ريال" target="_blank" class="btn btn-outline">اطلب الآن</a>
-        </div>
-      </div>
-
-      <!-- Standard - Featured -->
-      <div class="pricing-card featured">
-        <div class="pricing-badge">⭐ الأكثر طلباً</div>
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة المتقدمة</div>
-          <div class="pricing-price"><sub>ر.س </sub>2,800</div>
-          <div class="pricing-period">دفعة واحدة — يُسلّم خلال 7 أيام</div>
-        </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> 5 صفحات احترافية</div>
-          <div class="pricing-feature"><span class="check">✓</span> تصميم متجاوب مع الجوال</div>
-          <div class="pricing-feature"><span class="check">✓</span> زر واتساب + تكامل متقدم</div>
-          <div class="pricing-feature"><span class="check">✓</span> نموذج حجز المواعيد</div>
-          <div class="pricing-feature"><span class="check">✓</span> معرض صور الخدمات</div>
-          <div class="pricing-feature"><span class="check">✓</span> تحسين محركات البحث الأساسي</div>
-          <div class="pricing-feature"><span class="check">✓</span> شهران دعم تقني مجاني</div>
-          <div class="pricing-feature"><span class="cross">✕</span> نسخة عربية وإنجليزية</div>
-          <div class="pricing-feature"><span class="cross">✕</span> 3 أشهر صيانة مجانية</div>
-        </div>
-        <div class="pricing-footer">
-          <a href="https://wa.me/966500000000?text=أريد الباقة المتقدمة — 2800 ريال" target="_blank" class="btn btn-gold">اطلب الآن</a>
+        <div class="price-foot">
+          <a href="https://wa.me/966500000000?text=أريد الباقة الأساسية 1500 ريال" target="_blank" class="btn btn-outline">ابدأ الآن</a>
         </div>
       </div>
 
-      <!-- Premium -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة المميزة</div>
-          <div class="pricing-price"><sub>ر.س </sub>4,500</div>
-          <div class="pricing-period">دفعة واحدة — يُسلّم خلال 10 أيام</div>
+      <div class="price-card featured">
+        <div class="price-badge">⭐ الأكثر طلباً</div>
+        <div class="price-head">
+          <div class="price-name">المتقدمة</div>
+          <div class="price-amount"><sub>ر.س </sub>2,800</div>
+          <div class="price-note">تسليم في 7 أيام</div>
         </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> صفحات غير محدودة</div>
-          <div class="pricing-feature"><span class="check">✓</span> جميع مزايا الباقة المتقدمة</div>
-          <div class="pricing-feature"><span class="check">✓</span> نظام حجز مواعيد متكامل</div>
-          <div class="pricing-feature"><span class="check">✓</span> نسخة عربية وإنجليزية</div>
-          <div class="pricing-feature"><span class="check">✓</span> تحسين SEO متقدم</div>
-          <div class="pricing-feature"><span class="check">✓</span> 3 أشهر صيانة مجانية</div>
-          <div class="pricing-feature"><span class="check">✓</span> شهادة SSL الأمان مجانية</div>
-          <div class="pricing-feature"><span class="check">✓</span> دعم أولوية 24/7</div>
-          <div class="pricing-feature"><span class="check">✓</span> تقرير أداء شهري</div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> 5 صفحات احترافية</div>
+          <div class="price-feat"><span class="y">✓</span> تصميم متجاوب</div>
+          <div class="price-feat"><span class="y">✓</span> تكامل واتساب متقدم</div>
+          <div class="price-feat"><span class="y">✓</span> نموذج حجز المواعيد</div>
+          <div class="price-feat"><span class="y">✓</span> معرض صور الخدمات</div>
+          <div class="price-feat"><span class="y">✓</span> تحسين SEO أساسي</div>
+          <div class="price-feat"><span class="y">✓</span> خريطة وتوجيهات</div>
+          <div class="price-feat"><span class="y">✓</span> شهران دعم مجاني</div>
+          <div class="price-feat"><span class="y">✓</span> SSL مجاني</div>
+          <div class="price-feat"><span class="n">✕</span> نسخة إنجليزية</div>
         </div>
-        <div class="pricing-footer">
-          <a href="https://wa.me/966500000000?text=أريد الباقة المميزة — 4500 ريال" target="_blank" class="btn btn-primary">اطلب الآن</a>
+        <div class="price-foot">
+          <a href="https://wa.me/966500000000?text=أريد الباقة المتقدمة 2800 ريال" target="_blank" class="btn btn-gold">ابدأ الآن</a>
         </div>
       </div>
-    </div>
 
-    <!-- Comparison Table -->
-    <div class="mt-4" data-aos="fade-up">
-      <h3 class="text-center section-title" style="font-size:1.4rem;margin-bottom:1.5rem;">مقارنة تفصيلية بين الباقات</h3>
-      <div style="overflow-x:auto;">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>الميزة</th>
-              <th>الأساسية<br><small>1,500 ر.س</small></th>
-              <th class="featured-col">المتقدمة ⭐<br><small>2,800 ر.س</small></th>
-              <th>المميزة<br><small>4,500 ر.س</small></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>عدد الصفحات</td>
-              <td>3 صفحات</td>
-              <td class="featured-col">5 صفحات</td>
-              <td>غير محدود</td>
-            </tr>
-            <tr>
-              <td>تصميم متجاوب</td>
-              <td><span class="check-icon">✓</span></td>
-              <td class="featured-col"><span class="check-icon">✓</span></td>
-              <td><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>زر واتساب</td>
-              <td><span class="check-icon">✓</span></td>
-              <td class="featured-col"><span class="check-icon">✓</span></td>
-              <td><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>نموذج حجز المواعيد</td>
-              <td><span class="cross-icon">✕</span></td>
-              <td class="featured-col"><span class="check-icon">✓</span></td>
-              <td><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>تحسين محركات البحث</td>
-              <td><span class="cross-icon">✕</span></td>
-              <td class="featured-col">أساسي</td>
-              <td>متقدم</td>
-            </tr>
-            <tr>
-              <td>نسخة ثنائية اللغة</td>
-              <td><span class="cross-icon">✕</span></td>
-              <td class="featured-col"><span class="cross-icon">✕</span></td>
-              <td><span class="check-icon">✓</span></td>
-            </tr>
-            <tr>
-              <td>صيانة مجانية</td>
-              <td>شهر واحد</td>
-              <td class="featured-col">شهران</td>
-              <td>3 أشهر</td>
-            </tr>
-            <tr>
-              <td>مدة التسليم</td>
-              <td>5 أيام</td>
-              <td class="featured-col">7 أيام</td>
-              <td>10 أيام</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="price-card">
+        <div class="price-head">
+          <div class="price-name">المميزة</div>
+          <div class="price-amount"><sub>ر.س </sub>4,500</div>
+          <div class="price-note">تسليم في 10 أيام</div>
+        </div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> صفحات غير محدودة</div>
+          <div class="price-feat"><span class="y">✓</span> كل مزايا المتقدمة</div>
+          <div class="price-feat"><span class="y">✓</span> نسخة عربية + إنجليزية</div>
+          <div class="price-feat"><span class="y">✓</span> تحسين SEO متقدم</div>
+          <div class="price-feat"><span class="y">✓</span> 3 أشهر صيانة مجانية</div>
+          <div class="price-feat"><span class="y">✓</span> SSL مجاني</div>
+          <div class="price-feat"><span class="y">✓</span> تقرير أداء شهري</div>
+          <div class="price-feat"><span class="y">✓</span> دعم أولوية 24/7</div>
+          <div class="price-feat"><span class="y">✓</span> تكامل Google Analytics</div>
+          <div class="price-feat"><span class="y">✓</span> نسخ احتياطي تلقائي</div>
+        </div>
+        <div class="price-foot">
+          <a href="https://wa.me/966500000000?text=أريد الباقة المميزة 4500 ريال" target="_blank" class="btn btn-primary">ابدأ الآن</a>
+        </div>
       </div>
     </div>
+    <p class="text-center mt3" style="color:var(--text-body);font-size:.88rem;">
+      تحتاج شيئاً مختلفاً؟ <a href="https://wa.me/966500000000" target="_blank" style="color:var(--navy);font-weight:700;text-decoration:underline;">نصمم لك باقة مخصصة</a>
+    </p>
+    <style>@media(max-width:768px){section .section [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;} .price-card.featured{transform:none !important;}}</style>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <div data-aos="fade-up">
-      <h2 class="cta-title">لم تجد ما يناسبك؟ نصمم لك باقة مخصصة</h2>
-      <p class="cta-sub">تواصل معنا وأخبرنا بمتطلباتك، وسنقدم لك عرضاً مخصصاً خلال ساعتين</p>
-      <div class="cta-buttons">
-        <a href="https://wa.me/966500000000?text=أريد باقة مخصصة لعيادتي" target="_blank" class="btn btn-whatsapp btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-          احصل على عرض مجاني
-        </a>
-        <a href="contact.html" class="btn btn-outline-white btn-lg">تواصل معنا</a>
-      </div>
+    <span class="eyebrow" style="background:rgba(201,168,76,.15);margin-bottom:1.2rem;">جاهز تبدأ؟</span>
+    <h2 class="cta-title">استشارة مجانية — الآن</h2>
+    <p class="cta-sub">أرد على واتساب خلال ساعتين ونتحدث عن موقع عيادتك</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/966500000000?text=السلام عليكم، أريد استشارة مجانية عن موقع عيادتي" target="_blank" class="btn btn-wa btn-lg">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        ابدأ عبر واتساب
+      </a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg">أو راسلنا هنا</a>
     </div>
   </div>
 </section>
@@ -431,53 +286,39 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div>
-        <a href="index.html" class="nav-logo" style="margin-bottom:.8rem;display:inline-flex;">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:.8rem;">
           <div class="nav-logo-icon">ر</div>
-          <div class="nav-logo-text">
-            <span class="brand">رواية تك</span>
-            <span class="tagline">Roaya Tech Agency</span>
-          </div>
+          <div class="nav-logo-text"><span class="brand">رواية تك</span><span class="tag">Roaya Tech Agency</span></div>
         </a>
-        <p class="footer-brand-text">وكالة متخصصة في تصميم المواقع الإلكترونية الاحترافية للعيادات والمراكز الطبية السعودية.</p>
-        <div class="footer-social">
-          <a href="#" class="social-icon">𝕏</a>
-          <a href="#" class="social-icon">📷</a>
-          <a href="#" class="social-icon">in</a>
-          <a href="https://wa.me/966500000000" target="_blank" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg></a>
-        </div>
+        <p class="footer-brand">وكالة متخصصة في تصميم المواقع الإلكترونية الاحترافية للعيادات والمراكز الطبية السعودية.</p>
       </div>
       <div>
         <h4 class="footer-title">روابط سريعة</h4>
         <ul class="footer-links">
-          <li><a href="index.html">› الرئيسية</a></li>
-          <li><a href="services.html">› خدماتنا</a></li>
-          <li><a href="portfolio.html">› أعمالنا</a></li>
-          <li><a href="about.html">› من نحن</a></li>
-          <li><a href="contact.html">› تواصل معنا</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="services.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
       </div>
       <div>
         <h4 class="footer-title">خدماتنا</h4>
         <ul class="footer-links">
-          <li><a href="#">› تصميم مواقع العيادات</a></li>
-          <li><a href="#">› تصميم متجاوب</a></li>
-          <li><a href="#">› حجز المواعيد</a></li>
-          <li><a href="#">› تحسين SEO</a></li>
-          <li><a href="#">› صيانة المواقع</a></li>
+          <li><a href="services.html">تصميم مواقع العيادات</a></li>
+          <li><a href="services.html">تصميم متجاوب</a></li>
+          <li><a href="services.html">حجز المواعيد</a></li>
+          <li><a href="services.html">تحسين SEO</a></li>
+          <li><a href="services.html">صيانة المواقع</a></li>
         </ul>
       </div>
       <div>
         <h4 class="footer-title">تواصل معنا</h4>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon">📱</div>
-          <div><div style="color:var(--white);font-weight:600;">واتساب</div><div>+966 50 000 0000</div></div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon">✉</div>
-          <div><div style="color:var(--white);font-weight:600;">البريد</div><div>info@roayatech.sa</div></div>
-        </div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📱</div><div><div style="color:white;font-weight:600;font-size:.82rem;">واتساب</div><div>+966 50 000 0000</div></div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">✉</div><div><div style="color:white;font-weight:600;font-size:.82rem;">البريد</div><div>info@roayatech.sa</div></div></div>
       </div>
     </div>
   </div>
@@ -485,22 +326,14 @@
 </footer>
 
 <a href="https://wa.me/966500000000" target="_blank" class="float-wa">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
 </a>
 
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-  });
-  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('aos-animate'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  document.querySelectorAll('[data-aos]').forEach(el => {
-    el.style.transitionDelay = (el.dataset.aosDelay || 0) + 'ms';
-    observer.observe(el);
-  });
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60));
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('aos-animate');}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-aos]').forEach(el=>{el.style.transitionDelay=(el.dataset.aosDelay||0)+'ms';obs.observe(el);});
 </script>
 </body>
 </html>

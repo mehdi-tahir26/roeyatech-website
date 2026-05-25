@@ -4,449 +4,233 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>رواية تك | مواقع احترافية للعيادات السعودية</title>
-  <meta name="description" content="رواية تك — وكالة تصميم مواقع متخصصة في العيادات الطبية السعودية. نبني مواقع احترافية تجذب المرضى وتعزز ثقتهم." />
+  <meta name="description" content="رواية تك — نبني مواقع احترافية للعيادات الطبية السعودية. موقع يجذب المرضى ويبني ثقتهم قبل أن يصلوا عيادتك." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Hero ── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #1e3475 100%);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 70px;
-    }
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #060d1f 0%, #0d1a3a 55%, #142040 100%);
+    display: flex; align-items: center;
+    padding-top: 68px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(201,168,76,.07) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(36,53,112,.5) 0%, transparent 50%);
+  }
+  /* Dot grid pattern */
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    position: relative; z-index: 2;
+    padding: 4rem 0;
+  }
 
-    .hero-glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
-      top: -100px;
-      left: -150px;
-      pointer-events: none;
-    }
+  /* ── Hero Text ── */
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: .45rem;
+    background: rgba(201,168,76,.12);
+    border: 1px solid rgba(201,168,76,.28);
+    color: var(--gold); padding: .38rem 1rem;
+    border-radius: 50px; font-size: .78rem; font-weight: 700;
+    margin-bottom: 1.4rem;
+  }
+  .hero-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: blink 1.4s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-    }
+  .hero-h1 {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900; color: var(--white); line-height: 1.2;
+    margin-bottom: 1.1rem;
+  }
+  .hero-h1 em { font-style: normal; color: var(--gold); }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: rgba(201,168,76,.15);
-      border: 1px solid rgba(201,168,76,.3);
-      color: var(--gold);
-      padding: .45rem 1.1rem;
-      border-radius: 50px;
-      font-size: .82rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
+  .hero-p {
+    font-size: clamp(.93rem, 1.6vw, 1.05rem);
+    color: rgba(255,255,255,.7); line-height: 1.85;
+    max-width: 500px; margin-bottom: 2rem;
+  }
 
-    .hero-eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: blink 1.5s infinite;
-    }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 2rem; }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: .3; }
-    }
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: .55rem;
+  }
+  .hero-pill {
+    display: flex; align-items: center; gap: .35rem;
+    font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 600;
+  }
+  .hero-pill span { color: var(--gold); font-size: .85rem; }
 
-    .hero-title {
-      font-size: clamp(2rem, 5.5vw, 3.8rem);
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-      font-weight: 900;
-    }
+  /* ── Hero Visual ── */
+  .hero-visual { position: relative; }
 
-    .hero-title .highlight {
-      color: var(--gold);
-      position: relative;
-    }
+  .browser-frame {
+    background: #1a2540;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08);
+    position: relative;
+  }
 
-    .hero-subtitle {
-      font-size: clamp(.95rem, 2vw, 1.15rem);
-      color: rgba(255,255,255,.75);
-      line-height: 1.8;
-      max-width: 580px;
-      margin-bottom: 2.2rem;
-    }
+  .browser-bar {
+    background: #111827;
+    padding: .55rem 1rem;
+    display: flex; align-items: center; gap: .55rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .b-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .browser-url {
+    flex: 1; background: rgba(255,255,255,.06); border-radius: 6px;
+    padding: .22rem .75rem; font-size: .6rem; color: rgba(255,255,255,.4);
+    margin-right: .6rem; display: flex; align-items: center; gap: .3rem;
+  }
 
-    .hero-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
+  /* Mini website inside browser */
+  .mini-site { background: #f8fafc; min-height: 310px; overflow: hidden; }
+  .mini-nav {
+    background: #0d1a3a; padding: .5rem 1rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .mini-logo { display: flex; align-items: center; gap: .4rem; }
+  .mini-logo-box { width: 22px; height: 22px; border-radius: 5px; background: var(--gold); }
+  .mini-logo-txt { display: flex; flex-direction: column; }
+  .mini-logo-txt span:first-child { font-size: .45rem; font-weight: 800; color: white; line-height: 1; }
+  .mini-logo-txt span:last-child  { font-size: .35rem; color: var(--gold); }
+  .mini-nav-links { display: flex; gap: .4rem; }
+  .mini-nav-link  { width: 22px; height: 5px; background: rgba(255,255,255,.2); border-radius: 3px; }
+  .mini-wa-btn    { width: 36px; height: 12px; background: #25D366; border-radius: 6px; }
 
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-    }
+  .mini-hero-section {
+    background: linear-gradient(135deg, #0d1a3a, #1a2d5a);
+    padding: .8rem 1rem; display: flex; align-items: center; gap: .6rem;
+  }
+  .mini-hero-text { flex: 1; }
+  .mini-h1 { height: 8px; background: white; border-radius: 4px; margin-bottom: 4px; width: 80%; }
+  .mini-h2 { height: 6px; background: rgba(255,255,255,.5); border-radius: 3px; margin-bottom: 4px; width: 65%; }
+  .mini-h3 { height: 5px; background: rgba(255,255,255,.3); border-radius: 3px; width: 50%; margin-bottom: 8px; }
+  .mini-btns { display: flex; gap: 4px; }
+  .mini-btn-g { width: 32px; height: 10px; background: #25D366; border-radius: 5px; }
+  .mini-btn-o { width: 28px; height: 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 5px; }
+  .mini-hero-img {
+    width: 60px; height: 55px; border-radius: 7px;
+    background: linear-gradient(135deg, rgba(201,168,76,.3), rgba(201,168,76,.1));
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+  }
 
-    .hero-trust-item {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      color: rgba(255,255,255,.7);
-      font-size: .85rem;
-    }
+  .mini-trust {
+    display: flex; background: white; border-bottom: 1px solid #e2e8f0;
+    padding: .4rem 1rem; gap: .5rem;
+  }
+  .mini-trust-item {
+    flex: 1; text-align: center; border-right: 1px solid #e2e8f0; padding: .2rem;
+  }
+  .mini-trust-item:last-child { border-right: none; }
+  .mini-trust-num   { height: 6px; background: #0d1a3a; border-radius: 3px; margin: 0 auto 3px; width: 24px; }
+  .mini-trust-label { height: 4px; background: #e2e8f0; border-radius: 2px; margin: 0 auto; width: 30px; }
 
-    .hero-trust-item .icon { color: var(--gold); }
+  .mini-services {
+    display: flex; gap: .4rem; padding: .5rem 1rem; background: #f8fafc;
+  }
+  .mini-service-card {
+    flex: 1; background: white; border-radius: 5px; padding: .4rem;
+    border: 1px solid #e2e8f0; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .mini-s-icon { width: 14px; height: 14px; border-radius: 4px; background: #0d1a3a; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; font-size: .4rem; }
+  .mini-s-t1   { height: 5px; background: #1e293b; border-radius: 2px; margin-bottom: 2px; width: 70%; }
+  .mini-s-t2   { height: 4px; background: #e2e8f0; border-radius: 2px; }
 
-    .hero-image-wrapper {
-      position: relative;
-      z-index: 2;
-      flex-shrink: 0;
-    }
+  /* Floating badges */
+  .hero-badge {
+    position: absolute; background: white; border-radius: 12px;
+    padding: .6rem .9rem; display: flex; align-items: center; gap: .6rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,.22); animation: float 3s ease-in-out infinite;
+  }
+  .hero-badge.b1 { top: -18px; left: -22px; animation-delay: 0s; }
+  .hero-badge.b2 { bottom: -18px; right: -18px; animation-delay: 1.4s; }
+  .hb-icon { font-size: 1.2rem; }
+  .hb-title { font-size: .75rem; font-weight: 800; color: #0d1a3a; line-height: 1.2; }
+  .hb-sub   { font-size: .62rem; color: var(--gray-mid); }
 
-    .hero-mockup {
-      width: 440px;
-      max-width: 100%;
-      border-radius: var(--radius-lg);
-      box-shadow: 0 30px 80px rgba(0,0,0,.4);
-      overflow: hidden;
-      border: 3px solid rgba(201,168,76,.25);
-    }
+  .hero-pill-mini {
+    position: absolute; top: 48%; left: -26px; transform: translateY(-50%);
+    background: var(--gold); color: white; font-size: .7rem; font-weight: 700;
+    padding: .32rem .75rem; border-radius: 50px; white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(201,168,76,.45); animation: float 2.8s ease-in-out infinite;
+    animation-delay: .7s;
+  }
 
-    .hero-mockup img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      object-position: top;
-    }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
 
-    .hero-mockup-bar {
-      background: rgba(27,43,94,.9);
-      padding: .75rem 1rem;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
+  /* ── "Who is this for" ── */
+  .for-section-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .for-img {
+    border-radius: var(--radius-xl); overflow: hidden;
+    box-shadow: var(--shadow-xl); position: relative;
+  }
+  .for-img img { width: 100%; height: 420px; object-fit: cover; }
+  .for-img-badge {
+    position: absolute; bottom: 1.5rem; right: 1.5rem;
+    background: white; border-radius: var(--radius); padding: .9rem 1.2rem;
+    box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: .7rem;
+  }
 
-    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+  /* ── Proof bar ── */
+  .proof-bar {
+    background: linear-gradient(135deg, #080f24, #0d1a3a);
+    padding: 2.5rem 0;
+  }
+  .proof-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  }
+  .proof-text { color: rgba(255,255,255,.75); font-size: .9rem; font-weight: 600; }
+  .proof-text strong { color: var(--gold); }
+  .proof-divider { width: 1px; height: 36px; background: rgba(255,255,255,.1); }
 
-    .hero-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-    }
+  /* Trust section below hero */
+  .trust-section { margin-top: -3rem; position: relative; z-index: 10; padding: 0 1.5rem; }
 
-    /* ── Trust Bar ── */
-    .trust-section {
-      margin-top: -3.5rem;
-      position: relative;
-      z-index: 10;
-      padding: 0 1.25rem;
-    }
-
-    /* ── Services ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    /* ── Portfolio Preview ── */
-    .portfolio-preview {
-      background: var(--off-white);
-    }
-
-    .portfolio-preview-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 400px;
-    }
-
-    .portfolio-preview-info {
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .portfolio-preview-img {
-      position: relative;
-      overflow: hidden;
-      min-height: 350px;
-    }
-
-    .portfolio-preview-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      transition: transform .6s ease;
-    }
-
-    .portfolio-preview-card:hover .portfolio-preview-img img { transform: scale(1.04); }
-
-    .portfolio-preview-img-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to left, rgba(27,43,94,.5), transparent);
-    }
-
-    /* ── Agency Visual ── */
-    .agency-visual {
-      position: relative;
-      width: 460px;
-      max-width: 100%;
-    }
-
-    .agency-screen {
-      background: #0f172a;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.1);
-    }
-
-    .agency-screen-bar {
-      background: #1e293b;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: .6rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .agency-url-bar {
-      flex: 1;
-      background: rgba(255,255,255,.06);
-      border-radius: 6px;
-      padding: .2rem .7rem;
-      font-size: .62rem;
-      color: rgba(255,255,255,.45);
-      margin-right: .6rem;
-      display: flex;
-      align-items: center;
-      gap: .3rem;
-    }
-
-    .agency-screen-body {
-      background: #f8fafc;
-      padding: .8rem;
-      min-height: 280px;
-    }
-
-    /* fake website UI skeleton */
-    .fake-site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--navy);
-      border-radius: 6px 6px 0 0;
-      padding: .45rem .7rem;
-      margin-bottom: .5rem;
-    }
-
-    .fake-logo-bar {
-      width: 60px;
-      height: 8px;
-      background: var(--gold);
-      border-radius: 4px;
-    }
-
-    .fake-bar {
-      background: #e2e8f0;
-      border-radius: 4px;
-      height: 8px;
-    }
-    .fake-bar.lg { height: 12px; }
-    .fake-bar.md { height: 9px; }
-    .fake-bar.sm { height: 7px; }
-    .mb-6 { margin-bottom: 6px; }
-
-    .fake-hero-area {
-      display: flex;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--navy) 0%, #2a3f7a 100%);
-      border-radius: 4px;
-      padding: .8rem;
-      margin-bottom: .5rem;
-      align-items: center;
-    }
-
-    .fake-btn {
-      height: 20px;
-      border-radius: 20px;
-      width: 60px;
-    }
-    .fake-btn.green  { background: var(--green-wa); }
-    .fake-btn.outline { background: transparent; border: 1.5px solid rgba(255,255,255,.4); }
-
-    .fake-img-block {
-      width: 80px;
-      height: 70px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, rgba(201,168,76,.3), rgba(201,168,76,.1));
-      flex-shrink: 0;
-      border: 1px solid rgba(201,168,76,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .fake-img-block::after { content: '🏥'; }
-
-    .fake-cards-row {
-      display: flex;
-      gap: 5px;
-    }
-
-    .fake-card {
-      flex: 1;
-      background: white;
-      border-radius: 6px;
-      padding: .5rem .3rem;
-      text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
-      border: 1px solid #f1f5f9;
-    }
-
-    .fake-card-icon { font-size: .85rem; }
-
-    /* Floating badges */
-    .float-badge {
-      position: absolute;
-      background: white;
-      border-radius: 12px;
-      padding: .6rem .9rem;
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,.2);
-      border: 1px solid rgba(255,255,255,.8);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .float-badge.top-right {
-      top: -16px;
-      left: -20px;
-      animation-delay: 0s;
-    }
-
-    .float-badge.bottom-left {
-      bottom: -16px;
-      right: -16px;
-      animation-delay: 1.5s;
-    }
-
-    .float-badge-icon { font-size: 1.3rem; }
-    .float-badge-title { font-size: .78rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
-    .float-badge-sub   { font-size: .65rem; color: var(--mid-gray); }
-
-    .float-badge-mini {
-      position: absolute;
-      top: 50%;
-      left: -24px;
-      transform: translateY(-50%);
-      background: var(--gold);
-      color: white;
-      font-size: .72rem;
-      font-weight: 700;
-      padding: .35rem .75rem;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      gap: .3rem;
-      box-shadow: 0 4px 16px rgba(201,168,76,.4);
-      animation: float 3s ease-in-out infinite;
-      animation-delay: .8s;
-      white-space: nowrap;
-    }
-
-    .live-cursor {
-      position: absolute;
-      bottom: 60px;
-      left: 90px;
-      display: flex;
-      align-items: center;
-      gap: .4rem;
-      animation: float 2.5s ease-in-out infinite;
-      animation-delay: .4s;
-    }
-
-    .live-cursor-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,168,76,.3);
-    }
-
-    .live-cursor-label {
-      background: rgba(27,43,94,.9);
-      color: white;
-      font-size: .65rem;
-      font-weight: 700;
-      padding: .2rem .6rem;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-8px); }
-    }
-
-    @media (max-width: 768px) {
-      .hero-layout { flex-direction: column; text-align: center; }
-      .hero-btns, .hero-trust { justify-content: center; }
-      .agency-visual { width: 100%; margin-top: 1rem; }
-      .float-badge-mini { display: none; }
-      .float-badge.top-right { top: -12px; left: 10px; }
-      .float-badge.bottom-left { bottom: -12px; right: 10px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .portfolio-preview-card { grid-template-columns: 1fr; }
-      .portfolio-preview-img { min-height: 220px; }
-    }
-
-    @media (max-width: 480px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-btns, .hero-pills { justify-content: center; }
+    .hero-visual { display: none; }
+    .for-section-grid { grid-template-columns: 1fr; }
+    .for-img { display: none; }
+    .proof-divider { display: none; }
+    .proof-inner { justify-content: center; text-align: center; gap: 1rem; }
+  }
+  @media (max-width: 600px) {
+    .hero-h1 { font-size: 1.85rem; }
+  }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<!-- ═══ NAVBAR ═══════════════════════════════════════════════ -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon">ر</div>
       <div class="nav-logo-text">
         <span class="brand">رواية تك</span>
-        <span class="tagline">Roaya Tech Agency</span>
+        <span class="tag">Roaya Tech Agency</span>
       </div>
     </a>
-
     <div class="nav-links">
       <a href="index.html" class="active">الرئيسية</a>
       <a href="services.html">خدماتنا</a>
@@ -455,606 +239,677 @@
       <a href="faq.html">الأسئلة الشائعة</a>
       <a href="contact.html">تواصل معنا</a>
     </div>
-
     <div class="nav-cta">
-      <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+      <a href="https://wa.me/966500000000" target="_blank" class="nav-wa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
         واتساب
       </a>
     </div>
-
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
-
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">🏠 الرئيسية</a>
-  <a href="services.html">⚡ خدماتنا</a>
-  <a href="portfolio.html">🎨 أعمالنا</a>
-  <a href="about.html">👥 من نحن</a>
-  <a href="faq.html">❓ الأسئلة الشائعة</a>
-  <a href="contact.html">📞 تواصل معنا</a>
-  <a href="https://wa.me/966500000000" target="_blank" class="nav-wa-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-    تواصل عبر واتساب
-  </a>
+  <a href="index.html">الرئيسية</a>
+  <a href="services.html">خدماتنا</a>
+  <a href="portfolio.html">أعمالنا</a>
+  <a href="about.html">من نحن</a>
+  <a href="faq.html">الأسئلة الشائعة</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a href="https://wa.me/966500000000" target="_blank" class="nav-wa" style="margin-top:.7rem;justify-content:center;display:flex;">تواصل عبر واتساب</a>
 </div>
 
-<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-glow"></div>
   <div class="container">
-    <div class="hero-layout">
-      <div class="hero-content" data-aos="fade-right">
+    <div class="hero-inner">
+
+      <!-- Text -->
+      <div data-aos="fade-right">
         <div class="hero-eyebrow">
-          <span class="hero-eyebrow-dot"></span>
-          وكالة رقم 1 لمواقع العيادات السعودية
+          <span class="hero-dot"></span>
+          متخصصون في العيادات الطبية السعودية
         </div>
-        <h1 class="hero-title">
-          نبني <span class="highlight">مواقع احترافية</span><br>للعيادات السعودية
+        <h1 class="hero-h1">
+          موقعك الإلكتروني<br>
+          يُقنع المرضى <em>قبل</em><br>
+          أن يصلوا عيادتك
         </h1>
-        <p class="hero-subtitle">
-          موقعك الإلكتروني هو أول انطباع يتركه مرضاك — اجعله استثنائياً
+        <p class="hero-p">
+          نبني مواقع احترافية مصممة خصيصاً للعيادات السعودية — تعكس احترافيتك، تجذب مرضى جدد، وتشتغل لصالحك حتى وأنت نائم.
         </p>
         <div class="hero-btns">
-          <a href="https://wa.me/966500000000?text=السلام عليكم، أريد موقعاً لعيادتي" target="_blank" class="btn btn-whatsapp btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-            ابدأ عبر واتساب
+          <a href="https://wa.me/966500000000?text=السلام عليكم، أريد موقعاً لعيادتي" target="_blank" class="btn btn-wa btn-lg">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            احصل على استشارة مجانية
           </a>
-          <a href="portfolio.html" class="btn btn-outline-white btn-lg">
-            اطلع على أعمالنا
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          </a>
+          <a href="portfolio.html" class="btn btn-outline-white btn-lg">اطلع على أعمالنا</a>
         </div>
-        <div class="hero-trust">
-          <div class="hero-trust-item"><span class="icon">✓</span> تسليم خلال 7 أيام</div>
-          <div class="hero-trust-item"><span class="icon">✓</span> ضمان استرداد المبلغ</div>
-          <div class="hero-trust-item"><span class="icon">✓</span> دعم مستمر بعد الإطلاق</div>
+        <div class="hero-pills">
+          <div class="hero-pill"><span>✓</span> تسليم خلال 7 أيام</div>
+          <div class="hero-pill"><span>✓</span> ضمان استرداد كامل</div>
+          <div class="hero-pill"><span>✓</span> دعم مستمر بعد الإطلاق</div>
         </div>
       </div>
 
-      <div class="hero-image-wrapper" data-aos="fade-left">
-        <div class="agency-visual">
-
-          <!-- Main screen mockup -->
-          <div class="agency-screen">
-            <div class="agency-screen-bar">
-              <div class="mock-dot" style="background:#ff5f56"></div>
-              <div class="mock-dot" style="background:#ffbd2e"></div>
-              <div class="mock-dot" style="background:#27c93f"></div>
-              <div class="agency-url-bar">
-                <span>🔒</span> roayatech.sa/eliteclinic
-              </div>
-            </div>
-            <div class="agency-screen-body">
-              <!-- Fake website being designed -->
-              <div class="fake-site-nav">
-                <div class="fake-logo-bar"></div>
-                <div style="display:flex;gap:6px;">
-                  <div class="fake-bar" style="width:36px"></div>
-                  <div class="fake-bar" style="width:36px"></div>
-                  <div class="fake-bar" style="width:36px"></div>
+      <!-- Visual -->
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="b-dot" style="background:#ff5f56"></div>
+            <div class="b-dot" style="background:#ffbd2e"></div>
+            <div class="b-dot" style="background:#27c93f"></div>
+            <div class="browser-url">🔒 eliteclinic.com</div>
+          </div>
+          <div class="mini-site">
+            <!-- Mini Nav -->
+            <div class="mini-nav">
+              <div class="mini-logo">
+                <div class="mini-logo-box"></div>
+                <div class="mini-logo-txt">
+                  <span>Elite Clinic</span>
+                  <span>عيادة النخبة</span>
                 </div>
               </div>
-              <div class="fake-hero-area">
-                <div style="flex:1;">
-                  <div class="fake-bar lg mb-6"></div>
-                  <div class="fake-bar md mb-6" style="width:80%"></div>
-                  <div class="fake-bar sm mb-6" style="width:65%"></div>
-                  <div style="display:flex;gap:6px;margin-top:8px;">
-                    <div class="fake-btn green"></div>
-                    <div class="fake-btn outline"></div>
-                  </div>
-                </div>
-                <div class="fake-img-block"></div>
+              <div class="mini-nav-links">
+                <div class="mini-nav-link"></div>
+                <div class="mini-nav-link"></div>
+                <div class="mini-nav-link"></div>
               </div>
-              <div class="fake-cards-row">
-                <div class="fake-card">
-                  <div class="fake-card-icon">🦷</div>
-                  <div class="fake-bar sm" style="width:55px;margin:.3rem auto 0;"></div>
-                </div>
-                <div class="fake-card">
-                  <div class="fake-card-icon">👁</div>
-                  <div class="fake-bar sm" style="width:55px;margin:.3rem auto 0;"></div>
-                </div>
-                <div class="fake-card">
-                  <div class="fake-card-icon">🫀</div>
-                  <div class="fake-bar sm" style="width:55px;margin:.3rem auto 0;"></div>
+              <div class="mini-wa-btn"></div>
+            </div>
+            <!-- Mini Hero -->
+            <div class="mini-hero-section">
+              <div class="mini-hero-text">
+                <div class="mini-h1"></div>
+                <div class="mini-h2"></div>
+                <div class="mini-h3"></div>
+                <div class="mini-btns">
+                  <div class="mini-btn-g"></div>
+                  <div class="mini-btn-o"></div>
                 </div>
               </div>
+              <div class="mini-hero-img">🏥</div>
+            </div>
+            <!-- Mini Trust -->
+            <div class="mini-trust">
+              <div class="mini-trust-item"><div class="mini-trust-num"></div><div class="mini-trust-label"></div></div>
+              <div class="mini-trust-item"><div class="mini-trust-num"></div><div class="mini-trust-label"></div></div>
+              <div class="mini-trust-item"><div class="mini-trust-num"></div><div class="mini-trust-label"></div></div>
+              <div class="mini-trust-item"><div class="mini-trust-num"></div><div class="mini-trust-label"></div></div>
+            </div>
+            <!-- Mini Services -->
+            <div class="mini-services">
+              <div class="mini-service-card">
+                <div class="mini-s-icon">🦷</div>
+                <div class="mini-s-t1"></div><div class="mini-s-t2"></div>
+              </div>
+              <div class="mini-service-card">
+                <div class="mini-s-icon">👁</div>
+                <div class="mini-s-t1"></div><div class="mini-s-t2"></div>
+              </div>
+              <div class="mini-service-card">
+                <div class="mini-s-icon">❤️</div>
+                <div class="mini-s-t1"></div><div class="mini-s-t2"></div>
+              </div>
             </div>
           </div>
-
-          <!-- Floating badge cards -->
-          <div class="float-badge top-right">
-            <span class="float-badge-icon">🎨</span>
-            <div>
-              <div class="float-badge-title">تصميم مخصص</div>
-              <div class="float-badge-sub">لكل عيادة هويتها</div>
-            </div>
-          </div>
-
-          <div class="float-badge bottom-left">
-            <span class="float-badge-icon">⚡</span>
-            <div>
-              <div class="float-badge-title">تسليم 7 أيام</div>
-              <div class="float-badge-sub">بدون تأخير</div>
-            </div>
-          </div>
-
-          <div class="float-badge-mini top-left">
-            <span>📱</span> متجاوب 100%
-          </div>
-
-          <!-- Live editing dot -->
-          <div class="live-cursor">
-            <div class="live-cursor-dot"></div>
-            <div class="live-cursor-label">جاري التصميم...</div>
-          </div>
-
         </div>
+
+        <!-- Floating badges -->
+        <div class="hero-badge b1">
+          <span class="hb-icon">🎨</span>
+          <div>
+            <div class="hb-title">تصميم مخصص</div>
+            <div class="hb-sub">لكل عيادة هويتها</div>
+          </div>
+        </div>
+        <div class="hero-badge b2">
+          <span class="hb-icon">⚡</span>
+          <div>
+            <div class="hb-title">تسليم 7 أيام</div>
+            <div class="hb-sub">التزام بالموعد دائماً</div>
+          </div>
+        </div>
+        <div class="hero-pill-mini">📱 متجاوب 100%</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ TRUST BAR ═══════════════════════════════ -->
+<!-- ═══ TRUST BAR ══════════════════════════════════════════════ -->
 <div class="trust-section">
   <div class="container">
     <div class="trust-bar" data-aos="fade-up">
       <div class="trust-item">
-        <div class="trust-number">+<span>50</span></div>
+        <div class="trust-num">+<span>50</span></div>
         <div class="trust-label">عميل سعيد</div>
       </div>
       <div class="trust-item">
-        <div class="trust-number">+<span>60</span></div>
+        <div class="trust-num">+<span>60</span></div>
         <div class="trust-label">موقع منجز</div>
       </div>
       <div class="trust-item">
-        <div class="trust-number"><span>4</span>+</div>
+        <div class="trust-num"><span>4</span>+</div>
         <div class="trust-label">سنوات خبرة</div>
       </div>
       <div class="trust-item">
-        <div class="trust-number"><span>100</span>%</div>
-        <div class="trust-label">ضمان الجودة</div>
+        <div class="trust-num"><span>100</span>%</div>
+        <div class="trust-label">ضمان رضا تام</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+<!-- ═══ WHO IS THIS FOR ═══════════════════════════════════════ -->
 <section class="section">
   <div class="container">
-    <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">خدماتنا</span>
-      <h2 class="section-title">كل ما تحتاجه عيادتك رقمياً</h2>
-      <div class="gold-divider"></div>
-      <p class="section-sub mt-3">نقدم حلولاً متكاملة لتحويل حضورك الرقمي إلى مصدر موثوق لاستقطاب المرضى</p>
-    </div>
-
-    <div class="services-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="service-icon">🎨</div>
-        <h3 class="service-title">تصميم موقع احترافي</h3>
-        <p class="service-text">موقع فريد يعكس هوية عيادتك ويبني ثقة المرضى من اللحظة الأولى بتصميم حديث وأنيق.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-icon">📱</div>
-        <h3 class="service-title">متجاوب مع الجوال</h3>
-        <p class="service-text">موقعك يبدو مثالياً على كل الأجهزة — هاتف، تابلت، أو كمبيوتر — بدون أي تشويه.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-icon">📅</div>
-        <h3 class="service-title">حجز المواعيد أونلاين</h3>
-        <p class="service-text">نموذج حجز مواعيد ذكي يسمح للمرضى بالحجز مباشرة ويقلل الضغط على مساعديك.</p>
-      </div>
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-icon">🔍</div>
-        <h3 class="service-title">تحسين محركات البحث</h3>
-        <p class="service-text">نُحسّن موقعك ليظهر في نتائج Google عندما يبحث المرضى عن عيادات في منطقتك.</p>
-      </div>
-    </div>
-
-    <div class="text-center mt-4">
-      <a href="services.html" class="btn btn-primary btn-lg">استعرض جميع الخدمات</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ PORTFOLIO PREVIEW ═══════════════════════════════ -->
-<section class="section section-alt portfolio-preview">
-  <div class="container">
-    <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">أعمالنا</span>
-      <h2 class="section-title">نموذج من أحدث أعمالنا</h2>
-      <div class="gold-divider"></div>
-      <p class="section-sub mt-3">موقع عيادة Elite Clinic — تصميم احترافي بمعايير عالمية</p>
-    </div>
-
-    <div class="portfolio-preview-card" data-aos="zoom-in">
-      <div class="portfolio-preview-info">
-        <span class="badge badge-gold mb-3">✦ مشروع مميز</span>
-        <h3 style="font-size:1.6rem;color:var(--navy);margin-bottom:.7rem;">Elite Clinic</h3>
-        <p style="color:var(--text-body);line-height:1.8;margin-bottom:1.5rem;">موقع متكامل لعيادة طبية متخصصة يضم صفحات الخدمات وحجز المواعيد والمعرض الطبي مع تصميم أنيق يعكس الاحترافية والثقة.</p>
-        <div class="portfolio-tags mb-4" style="justify-content:flex-start;">
-          <span class="portfolio-tag">تصميم احترافي</span>
-          <span class="portfolio-tag">حجز مواعيد</span>
-          <span class="portfolio-tag">SEO</span>
-          <span class="portfolio-tag">متجاوب</span>
+    <div class="for-section-grid">
+      <div class="for-img" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="طبيب سعودي يتصفح الإنترنت" loading="lazy" />
+        <div class="for-img-badge">
+          <span style="font-size:1.5rem;">🏆</span>
+          <div>
+            <div style="font-weight:800;color:var(--navy);font-size:.85rem;">موقعك = أداة تسويق</div>
+            <div style="font-size:.72rem;color:var(--gray-mid);">يشتغل لك 24 ساعة يومياً</div>
+          </div>
         </div>
-        <a href="https://mehdi-tahir26.github.io/eliteclinic/" target="_blank" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          عرض الموقع مباشرة
+      </div>
+
+      <div data-aos="fade-left">
+        <span class="eyebrow">هذا الموقع لك</span>
+        <h2 class="section-title">هل هذا وضعك؟</h2>
+        <span class="gold-line" style="margin:0 0 1.5rem;"></span>
+
+        <div>
+          <div class="check-item">
+            <div class="check-bullet">✓</div>
+            <div>
+              <div class="check-title">عيادتك احترافية لكن موقعك لا يعكس هذا</div>
+              <div class="check-sub">المريض يحكم على عيادتك من موقعها قبل أي شيء آخر — الموقع الضعيف يطرد المرضى.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet">✓</div>
+            <div>
+              <div class="check-title">تريد مرضى جدد يجدونك على الإنترنت</div>
+              <div class="check-sub">80% من المرضى يبحثون على Google قبل الحجز — هل موقعك يظهر لهم؟</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet">✓</div>
+            <div>
+              <div class="check-title">تريد موقعاً يشتغل بينما أنت تعمل</div>
+              <div class="check-sub">نموذج حجز، واتساب مدمج، معلومات العيادة — كل شيء يعمل تلقائياً.</div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet">✓</div>
+            <div>
+              <div class="check-title">تريد موقعاً سريعاً بدون متاعب</div>
+              <div class="check-sub">أسلّمك موقعك كاملاً خلال أسبوع — أنت فقط تعطيني معلومات عيادتك والباقي عليّ.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/966500000000?text=نعم، هذا وضعي بالضبط — أريد موقعاً لعيادتي" target="_blank" class="btn btn-primary btn-lg mt4">
+          نعم، هذا وضعي — ابدأ معي
         </a>
       </div>
-      <div class="portfolio-preview-img">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Elite Clinic موقع عيادة" loading="lazy" />
-        <div class="portfolio-preview-img-overlay"></div>
-      </div>
-    </div>
-
-    <div class="text-center mt-4">
-      <a href="portfolio.html" class="btn btn-outline btn-lg">مشاهدة جميع الأعمال</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ HOW IT WORKS ═══════════════════════════════ -->
-<section class="section">
-  <div class="container">
-    <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">كيف نعمل</span>
-      <h2 class="section-title">من الفكرة إلى الإطلاق في 4 خطوات</h2>
-      <div class="gold-divider"></div>
-    </div>
-
-    <div class="steps-grid mt-4">
-      <div class="step-card card" data-aos="fade-up" data-aos-delay="0">
-        <div class="step-number">١</div>
-        <h3 class="step-title">نتعرف على عيادتك</h3>
-        <p class="step-text">نجلس معك لفهم تخصصك واحتياجاتك وأهدافك من الموقع الإلكتروني.</p>
-      </div>
-      <div class="step-card card" data-aos="fade-up" data-aos-delay="100">
-        <div class="step-number">٢</div>
-        <h3 class="step-title">نصمم موقعك</h3>
-        <p class="step-text">فريقنا يبدأ بتصميم موقع احترافي يعكس هوية عيادتك ويجذب المرضى.</p>
-      </div>
-      <div class="step-card card" data-aos="fade-up" data-aos-delay="200">
-        <div class="step-number">٣</div>
-        <h3 class="step-title">نراجع معك</h3>
-        <p class="step-text">تطلع على الموقع وتعطينا ملاحظاتك، ونُطبّق التعديلات حتى تكون راضياً تماماً.</p>
-      </div>
-      <div class="step-card card" data-aos="fade-up" data-aos-delay="300">
-        <div class="step-number">٤</div>
-        <h3 class="step-title">نطلق موقعك</h3>
-        <p class="step-text">نرفع الموقع على الإنترنت ونضمن أن كل شيء يعمل بشكل مثالي قبل التسليم.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ PRICING ═══════════════════════════════ -->
+<!-- ═══ SERVICES ══════════════════════════════════════════════ -->
 <section class="section section-alt">
   <div class="container">
     <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">الأسعار</span>
-      <h2 class="section-title">باقات تناسب كل عيادة</h2>
-      <div class="gold-divider"></div>
-      <p class="section-sub mt-3">أسعار شفافة وبدون رسوم خفية — اختر الباقة المناسبة لعيادتك</p>
+      <span class="eyebrow">ما نقدمه</span>
+      <h2 class="section-title">كل ما تحتاجه عيادتك رقمياً</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">لا تحتاج خبرة تقنية — نتولى كل شيء من التصميم حتى الإطلاق</p>
+    </div>
+    <div class="g3">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon">🎨</div>
+        <h3 class="service-title">تصميم موقع احترافي</h3>
+        <p class="service-text">موقع فريد بهوية بصرية تعكس عيادتك، مبني ليبني ثقة المريض من أول نظرة. ليس قالباً جاهزاً — موقع مخصص لك تماماً.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon">📱</div>
+        <h3 class="service-title">متجاوب مع الجوال</h3>
+        <p class="service-text">موقعك يبدو مثالياً على كل الأجهزة. 85% من مرضاك يفتحون الموقع من هاتفهم — نضمن لهم تجربة سلسة وجذابة.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon">💬</div>
+        <h3 class="service-title">تكامل واتساب ذكي</h3>
+        <p class="service-text">زر واتساب مع رسالة مخصصة يجعل المريض يتواصل معك بنقرة واحدة — زيادة فورية في الاستفسارات من اليوم الأول.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon">📅</div>
+        <h3 class="service-title">نموذج حجز المواعيد</h3>
+        <p class="service-text">المريض يحجز موعده مباشرة من الموقع، ويصلك إشعار فوري. يقلل الضغط على موظفيك ويزيد الحجوزات.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-icon">🔍</div>
+        <h3 class="service-title">تحسين محركات البحث</h3>
+        <p class="service-text">موقعك يظهر في Google عندما يبحث المريض عن "طبيب أسنان في الرياض" أو أي تخصص في منطقتك — مرضى جدد مجاناً.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-icon">🛡</div>
+        <h3 class="service-title">صيانة ودعم مستمر</h3>
+        <p class="service-text">بعد الإطلاق ما تُترك وحدك. دعم تقني، تحديث محتوى، وضمان أن الموقع يعمل دائماً بأعلى أداء.</p>
+      </div>
+    </div>
+    <div class="text-center mt4">
+      <a href="services.html" class="btn btn-outline">استعرض جميع الخدمات والأسعار</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO FEATURE ═════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="eyebrow">أعمالنا</span>
+      <h2 class="section-title">موقع Elite Clinic — أحدث أعمالنا</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">اضغط على الزر وشوف الموقع مباشرة — هكذا سيبدو موقع عيادتك</p>
     </div>
 
-    <div class="pricing-grid">
+    <div style="background:var(--off);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-xl);border:1px solid var(--gray-lt);" data-aos="zoom-in">
+      <div style="display:grid;grid-template-columns:1fr 1fr;" class="port-feature-grid">
+        <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+          <span class="eyebrow" style="margin-bottom:.8rem;">✦ المشروع المميز</span>
+          <h3 style="font-size:1.75rem;color:var(--navy);margin-bottom:.7rem;">Elite Clinic</h3>
+          <p style="color:var(--text-body);font-size:.92rem;line-height:1.85;margin-bottom:1.5rem;">
+            موقع متكامل وراقٍ لعيادة طبية متخصصة — تصميم يعكس الاحترافية، نظام حجز مواعيد، ربط واتساب، وتحسين لمحركات البحث. من الفكرة للإطلاق في 8 أيام.
+          </p>
+          <div class="port-tags mb3" style="justify-content:flex-start;">
+            <span class="port-tag">تصميم احترافي</span>
+            <span class="port-tag">حجز مواعيد</span>
+            <span class="port-tag">SEO</span>
+            <span class="port-tag">واتساب</span>
+            <span class="port-tag">متجاوب</span>
+          </div>
+          <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
+            <a href="https://mehdi-tahir26.github.io/eliteclinic/" target="_blank" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              شوف الموقع مباشرة
+            </a>
+            <a href="portfolio.html" class="btn btn-outline">جميع الأعمال</a>
+          </div>
+        </div>
+        <div style="position:relative;overflow:hidden;min-height:380px;">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="موقع Elite Clinic" style="width:100%;height:100%;object-fit:cover;object-position:top;" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(247,248,252,.3), transparent);"></div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+    @media(max-width:768px){
+      .port-feature-grid{grid-template-columns:1fr !important;}
+      .port-feature-grid>div:last-child{min-height:220px !important;}
+    }
+    </style>
+  </div>
+</section>
+
+<!-- ═══ WHY US ════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="why-us-grid">
+      <div data-aos="fade-right">
+        <span class="eyebrow">لماذا نحن</span>
+        <h2 class="section-title" style="text-align:right;">ما الذي يجعلنا مختلفين؟</h2>
+        <span class="gold-line" style="margin:0 0 1.8rem;"></span>
+
+        <div class="why-item">
+          <div class="why-icon">🏥</div>
+          <div><div class="why-title">متخصصون في العيادات الطبية فقط</div><div class="why-text">لا نصمم لكل أحد — تخصصنا في القطاع الطبي يعني أننا نفهم احتياجاتك ولغة مرضاك أفضل من أي وكالة عامة.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div><div class="why-title">تسليم خلال 7 أيام — مضمون</div><div class="why-text">لا وعود فارغة. التزامنا بالمواعيد جزء من هويتنا. إذا تأخرنا — نعوضك مباشرة.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💬</div>
+          <div><div class="why-title">تتواصل معي مباشرة — بدون وسطاء</div><div class="why-text">لا مديرين وسطاء ولا فرق كبيرة. تتكلم معي مباشرة وأنا المسؤول عن كل حرف في موقعك — هذا يعني اهتمام أكثر لمشروعك.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🔒</div>
+          <div><div class="why-title">ضمان استرداد كامل 14 يوماً</div><div class="why-text">واثق من جودة عملي. إذا لم تكن راضياً نعيد لك المبلغ كاملاً — بدون أسئلة ولا تعقيدات.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🇸🇦</div>
+          <div><div class="why-title">خبرة عميقة بالسوق السعودي</div><div class="why-text">نفهم طبيعة المريض السعودي وكيف يبحث ويقرر — هذا الفهم يظهر في كل صفحة نصممها.</div></div>
+        </div>
+
+        <div class="guarantee-box">
+          <span class="guarantee-icon">🛡</span>
+          <div>
+            <div class="guarantee-title">ضمان الرضا الكامل</div>
+            <div class="guarantee-text">إذا لم يعجبك الموقع بعد جولتين من التعديلات — نعيد لك 100% من المبلغ خلال 14 يوماً. لا شروط معقدة.</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="تصميم مواقع احترافية" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);" loading="lazy" />
+      </div>
+    </div>
+    <style>
+    @media(max-width:768px){
+      .why-us-grid{grid-template-columns:1fr !important;}
+      .why-us-grid>div:last-child{display:none;}
+    }
+    </style>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="eyebrow">كيف نعمل</span>
+      <h2 class="section-title">من المحادثة الأولى إلى الإطلاق</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">عملية بسيطة، واضحة، وبدون أي تعقيد من طرفك</p>
+    </div>
+    <div class="g4">
+      <div class="card" style="padding:2rem;text-align:center;" data-aos="fade-up" data-aos-delay="0">
+        <div class="step-num">١</div>
+        <h3 class="step-title">نتحدث ونتعرف</h3>
+        <p class="step-text">محادثة واتساب مجانية نفهم فيها عيادتك، تخصصك، وما تريده بالضبط.</p>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;" data-aos="fade-up" data-aos-delay="80">
+        <div class="step-num">٢</div>
+        <h3 class="step-title">نصمم موقعك</h3>
+        <p class="step-text">أبدأ فوراً في التصميم — موقع مخصص لعيادتك بهويتها الكاملة.</p>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;" data-aos="fade-up" data-aos-delay="160">
+        <div class="step-num">٣</div>
+        <h3 class="step-title">تراجع وتعدّل</h3>
+        <p class="step-text">أعرض عليك الموقع، تعطيني ملاحظاتك، نعدّل حتى تكون راضياً تماماً.</p>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center;" data-aos="fade-up" data-aos-delay="240">
+        <div class="step-num">٤</div>
+        <h3 class="step-title">نطلق ويشتغل</h3>
+        <p class="step-text">نرفع الموقع على الإنترنت ويبدأ يجذب المرضى من اليوم الأول.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="eyebrow">آراء العملاء</span>
+      <h2 class="section-title">ماذا قالوا عن تجربتهم؟</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="g3 mt4">
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">صراحة تجاوز توقعاتي. الموقع جاء احترافياً جداً وبدأت أستقبل مرضى جدد يقولون "شفت موقعك وحجزت" — هذا كل شيء.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ع</div>
+          <div>
+            <div class="testi-name">د. عبدالعزيز الشمري</div>
+            <div class="testi-clinic">عيادة الشمري للأسنان — الرياض</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">كنت خايفة أدفع ومايجي شيء، لكن من أول محادثة أحسست بالأمان. التسليم كان في الوقت، والموقع أحلى من اللي تخيلته.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ن</div>
+          <div>
+            <div class="testi-name">د. نورة العتيبي</div>
+            <div class="testi-clinic">مركز نورة للتجميل — جدة</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">سعر معقول وجودة مو معقولة — ممتازة. التعديلات كانت فورية وما حس بأي ضغط. أنصح كل دكتور ما عنده موقع يتواصل معهم الحين.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">م</div>
+          <div>
+            <div class="testi-name">د. محمد القحطاني</div>
+            <div class="testi-clinic">عيادة القحطاني العامة — الدمام</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="eyebrow">الأسعار</span>
+      <h2 class="section-title">أسعار واضحة — بدون مفاجآت</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub mt2">كل ما هو مذكور مشمول في السعر. لا رسوم خفية، لا إضافات مفاجئة</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;align-items:start;" data-aos="fade-up">
       <!-- Basic -->
-      <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة الأساسية</div>
-          <div class="pricing-price"><sub>ر.س </sub>1,500</div>
-          <div class="pricing-period">دفعة واحدة</div>
+      <div class="price-card">
+        <div class="price-head">
+          <div class="price-name">الأساسية</div>
+          <div class="price-amount"><sub>ر.س </sub>1,500</div>
+          <div class="price-note">تسليم في 5 أيام</div>
         </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> 3 صفحات احترافية</div>
-          <div class="pricing-feature"><span class="check">✓</span> تصميم متجاوب مع الجوال</div>
-          <div class="pricing-feature"><span class="check">✓</span> زر واتساب للتواصل</div>
-          <div class="pricing-feature"><span class="check">✓</span> معلومات العيادة والأطباء</div>
-          <div class="pricing-feature"><span class="cross">✕</span> نموذج حجز المواعيد</div>
-          <div class="pricing-feature"><span class="cross">✕</span> معرض صور الخدمات</div>
-          <div class="pricing-feature"><span class="cross">✕</span> تحسين محركات البحث</div>
-          <div class="pricing-feature"><span class="cross">✕</span> صيانة بعد التسليم</div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> 3 صفحات احترافية</div>
+          <div class="price-feat"><span class="y">✓</span> تصميم متجاوب مع الجوال</div>
+          <div class="price-feat"><span class="y">✓</span> زر واتساب</div>
+          <div class="price-feat"><span class="y">✓</span> معلومات العيادة والأطباء</div>
+          <div class="price-feat"><span class="y">✓</span> شهر دعم مجاني</div>
+          <div class="price-feat"><span class="n">✕</span> نموذج حجز المواعيد</div>
+          <div class="price-feat"><span class="n">✕</span> تحسين SEO</div>
+          <div class="price-feat"><span class="n">✕</span> معرض صور</div>
         </div>
-        <div class="pricing-footer">
+        <div class="price-foot">
           <a href="https://wa.me/966500000000?text=أريد الباقة الأساسية" target="_blank" class="btn btn-outline">ابدأ الآن</a>
         </div>
       </div>
 
       <!-- Standard -->
-      <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
-        <div class="pricing-badge">الأكثر طلباً ⭐</div>
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة المتقدمة</div>
-          <div class="pricing-price"><sub>ر.س </sub>2,800</div>
-          <div class="pricing-period">دفعة واحدة</div>
+      <div class="price-card featured">
+        <div class="price-badge">⭐ الأكثر طلباً</div>
+        <div class="price-head">
+          <div class="price-name">المتقدمة</div>
+          <div class="price-amount"><sub>ر.س </sub>2,800</div>
+          <div class="price-note">تسليم في 7 أيام</div>
         </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> 5 صفحات احترافية</div>
-          <div class="pricing-feature"><span class="check">✓</span> تصميم متجاوب مع الجوال</div>
-          <div class="pricing-feature"><span class="check">✓</span> زر واتساب + تكامل واتساب</div>
-          <div class="pricing-feature"><span class="check">✓</span> نموذج حجز المواعيد</div>
-          <div class="pricing-feature"><span class="check">✓</span> معرض صور الخدمات</div>
-          <div class="pricing-feature"><span class="check">✓</span> تحسين محركات البحث الأساسي</div>
-          <div class="pricing-feature"><span class="cross">✕</span> صيانة بعد التسليم</div>
-          <div class="pricing-feature"><span class="cross">✕</span> نسخة عربية وإنجليزية</div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> 5 صفحات احترافية</div>
+          <div class="price-feat"><span class="y">✓</span> تصميم متجاوب مع الجوال</div>
+          <div class="price-feat"><span class="y">✓</span> تكامل واتساب متقدم</div>
+          <div class="price-feat"><span class="y">✓</span> نموذج حجز المواعيد</div>
+          <div class="price-feat"><span class="y">✓</span> معرض صور الخدمات</div>
+          <div class="price-feat"><span class="y">✓</span> تحسين SEO أساسي</div>
+          <div class="price-feat"><span class="y">✓</span> شهران دعم مجاني</div>
+          <div class="price-feat"><span class="n">✕</span> نسخة إنجليزية</div>
         </div>
-        <div class="pricing-footer">
+        <div class="price-foot">
           <a href="https://wa.me/966500000000?text=أريد الباقة المتقدمة" target="_blank" class="btn btn-gold">ابدأ الآن</a>
         </div>
       </div>
 
       <!-- Premium -->
-      <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="pricing-header">
-          <div class="pricing-name">الباقة المميزة</div>
-          <div class="pricing-price"><sub>ر.س </sub>4,500</div>
-          <div class="pricing-period">دفعة واحدة</div>
+      <div class="price-card">
+        <div class="price-head">
+          <div class="price-name">المميزة</div>
+          <div class="price-amount"><sub>ر.س </sub>4,500</div>
+          <div class="price-note">تسليم في 10 أيام</div>
         </div>
-        <div class="pricing-body">
-          <div class="pricing-feature"><span class="check">✓</span> موقع متكامل — صفحات غير محدودة</div>
-          <div class="pricing-feature"><span class="check">✓</span> جميع مزايا الباقة المتقدمة</div>
-          <div class="pricing-feature"><span class="check">✓</span> نموذج حجز مواعيد متقدم</div>
-          <div class="pricing-feature"><span class="check">✓</span> نسخة عربية وإنجليزية</div>
-          <div class="pricing-feature"><span class="check">✓</span> تحسين SEO متقدم</div>
-          <div class="pricing-feature"><span class="check">✓</span> 3 أشهر صيانة مجانية</div>
-          <div class="pricing-feature"><span class="check">✓</span> شهادة SSL مجانية</div>
-          <div class="pricing-feature"><span class="check">✓</span> دعم أولوية 24/7</div>
+        <div class="price-body">
+          <div class="price-feat"><span class="y">✓</span> صفحات غير محدودة</div>
+          <div class="price-feat"><span class="y">✓</span> كل مزايا المتقدمة</div>
+          <div class="price-feat"><span class="y">✓</span> نسخة عربية + إنجليزية</div>
+          <div class="price-feat"><span class="y">✓</span> تحسين SEO متقدم</div>
+          <div class="price-feat"><span class="y">✓</span> 3 أشهر صيانة مجانية</div>
+          <div class="price-feat"><span class="y">✓</span> SSL مجاني</div>
+          <div class="price-feat"><span class="y">✓</span> تقرير أداء شهري</div>
+          <div class="price-feat"><span class="y">✓</span> دعم أولوية 24/7</div>
         </div>
-        <div class="pricing-footer">
+        <div class="price-foot">
           <a href="https://wa.me/966500000000?text=أريد الباقة المميزة" target="_blank" class="btn btn-primary">ابدأ الآن</a>
         </div>
       </div>
     </div>
-
-    <div class="text-center mt-4">
-      <p style="color:var(--text-body);font-size:.9rem;">هل تحتاج باقة مخصصة؟ <a href="https://wa.me/966500000000" target="_blank" style="color:var(--navy);font-weight:700;text-decoration:underline;">تواصل معنا الآن</a></p>
-    </div>
+    <p class="text-center mt3" style="color:var(--text-body);font-size:.88rem;">
+      تحتاج شيئاً مختلفاً؟ <a href="https://wa.me/966500000000" target="_blank" style="color:var(--navy);font-weight:700;text-decoration:underline;">نصمم لك باقة مخصصة</a>
+    </p>
+    <style>
+    @media(max-width:768px){
+      [data-aos="fade-up"] + div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;}
+      .price-card.featured{transform:none !important;}
+    }
+    </style>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
-<section class="section">
-  <div class="container">
-    <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">آراء العملاء</span>
-      <h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
-      <div class="gold-divider"></div>
-    </div>
-
-    <div class="grid-3 mt-4">
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="testimonial-quote">"</div>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">الحمد لله، الموقع جاء أفضل بكثير مما توقعت. الفريق محترف جداً وملتزم بالمواعيد. المرضى بدأوا يتواصلون معنا من الموقع مباشرة من أول أسبوع!</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">ع</div>
-          <div>
-            <div class="testimonial-name">د. عبدالعزيز الشمري</div>
-            <div class="testimonial-clinic">عيادة الشمري للأسنان — الرياض</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-quote">"</div>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">كنت مترددة في البداية، لكن بعد التواصل مع رواية تك اطمأننت كثيراً. أسلوبهم احترافي وشرحوا لي كل التفاصيل. الموقع جميل جداً وانعكس إيجاباً على عيادتنا.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">ن</div>
-          <div>
-            <div class="testimonial-name">د. نورة العتيبي</div>
-            <div class="testimonial-clinic">مركز نورة للتجميل — جدة</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="testimonial-quote">"</div>
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">خدمة ممتازة وسعر مناسب جداً مقارنة بالجودة. التعديلات كانت سريعة وما ترددوا ولا مرة. أنصح كل دكتور يريد موقعاً احترافياً بالتواصل مع رواية تك.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">م</div>
-          <div>
-            <div class="testimonial-name">د. محمد القحطاني</div>
-            <div class="testimonial-clinic">عيادة القحطاني العامة — الدمام</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+<!-- ═══ FAQ PREVIEW ═══════════════════════════════════════════ -->
 <section class="section section-alt">
   <div class="container">
     <div class="text-center" data-aos="fade-up">
-      <span class="section-eyebrow">الأسئلة الشائعة</span>
-      <h2 class="section-title">أجوبة على أكثر الأسئلة شيوعاً</h2>
-      <div class="gold-divider"></div>
+      <span class="eyebrow">الأسئلة الشائعة</span>
+      <h2 class="section-title">أجوبة سريعة لأكثر الأسئلة شيوعاً</h2>
+      <span class="gold-line"></span>
     </div>
-
-    <div style="max-width:720px;margin:2.5rem auto 0;" data-aos="fade-up">
+    <div style="max-width:700px;margin:2.5rem auto 0;" data-aos="fade-up">
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          كم من الوقت يستغرق بناء الموقع؟
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">يستغرق عادةً من 5 إلى 10 أيام عمل حسب الباقة المختارة وتعقيد المتطلبات. الباقة الأساسية تُنجز في 5 أيام، والمتقدمة في 7 أيام، والمميزة في 10 أيام. نلتزم دائماً بالمواعيد المتفق عليها.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">كم من الوقت يستغرق بناء الموقع؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">5 أيام للباقة الأساسية، 7 للمتقدمة، 10 للمميزة. هذا التزام وليس تقديراً — إذا تأخرت أعوضك مباشرة.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          هل أحتاج خبرة تقنية لإدارة الموقع؟
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">لا تحتاج أي خبرة تقنية مطلقاً. نُسلّمك الموقع جاهزاً بالكامل، وإذا أردت تعديل أي معلومات نوفر لك تدريباً مجانياً على كيفية التحديث. كما يمكنك التواصل معنا في أي وقت لأي تعديل.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">هل أحتاج خبرة تقنية؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">لا تحتاج أي خبرة على الإطلاق. كل ما عليك هو إعطائي معلومات عيادتك وأتولى كل شيء. بعد التسليم، إذا أردت تعديل أي شيء أنت — أعلمك في 10 دقائق.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          ما هي طرق الدفع المقبولة؟
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">نقبل التحويل البنكي، مدى، فيزا، وماستركارد. يتم دفع 50% مقدماً لبدء العمل، والباقي عند الاستلام والموافقة النهائية.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">ما طرق الدفع المقبولة؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">تحويل بنكي، مدى، فيزا، ماستركارد. 50% مقدماً لبدء العمل، الباقي عند موافقتك على النسخة النهائية.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          هل توفرون الاستضافة؟
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">نعم، نوفر خدمة الاستضافة ونساعدك في تسجيل النطاق (الدومين). يمكننا تقديم الاستضافة بأسعار تنافسية، أو يمكنك استخدام استضافتك الخاصة ونحن نتكفل برفع الموقع عليها.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">هل توفر الاستضافة؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">نعم، أساعدك في تسجيل النطاق واختيار الاستضافة بأسعار تنافسية. أو إذا عندك استضافة أرفع الموقع عليها مجاناً.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          ماذا يحدث بعد التسليم؟
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">نُقدم دعماً مجانياً لمدة 30 يوماً بعد التسليم لأي مشاكل تقنية. وفي الباقة المميزة، يمتد الدعم لـ 3 أشهر. بعد ذلك، يمكنك الاشتراك في خطة الصيانة الشهرية الخاصة بنا.</div></div>
+        <button class="faq-q" onclick="toggleFaq(this)">ماذا يحدث لو لم أكن راضياً؟<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">نعمل على التعديل حتى ترضى. وإذا قدمت جميع جولات التعديل ولا زلت غير راضٍ — أعيد لك 100% من المبلغ خلال 14 يوماً بدون أي جدال.</div></div>
       </div>
     </div>
-
-    <div class="text-center mt-4">
-      <a href="faq.html" class="btn btn-outline">جميع الأسئلة الشائعة</a>
+    <div class="text-center mt4">
+      <a href="faq.html" class="btn btn-outline">جميع الأسئلة الشائعة (15 سؤال)</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<!-- ═══ FINAL CTA ══════════════════════════════════════════════ -->
 <section class="cta-section">
   <div class="container">
     <div data-aos="fade-up">
-      <h2 class="cta-title">جاهز لتحويل عيادتك رقمياً؟</h2>
-      <p class="cta-sub">تواصل معنا اليوم واحصل على استشارة مجانية — نرد خلال ساعتين</p>
-      <div class="cta-buttons">
-        <a href="https://wa.me/966500000000?text=السلام عليكم، أريد موقعاً لعيادتي" target="_blank" class="btn btn-whatsapp btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+      <span class="eyebrow" style="background:rgba(201,168,76,.15);margin-bottom:1.2rem;">جاهز تبدأ؟</span>
+      <h2 class="cta-title">عيادتك تستحق موقعاً<br>يستحقها</h2>
+      <p class="cta-sub">تواصل معي اليوم واحصل على استشارة مجانية — أرد خلال ساعتين</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/966500000000?text=السلام عليكم، أريد موقعاً لعيادتي" target="_blank" class="btn btn-wa btn-lg">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
           ابدأ عبر واتساب الآن
         </a>
-        <a href="contact.html" class="btn btn-outline-white btn-lg">أو أرسل لنا رسالة</a>
+        <a href="services.html" class="btn btn-outline-white btn-lg">استعرض الأسعار</a>
       </div>
+      <p style="color:rgba(255,255,255,.4);font-size:.8rem;margin-top:1.5rem;position:relative;">الاستشارة الأولى مجانية تماماً — بدون أي التزام</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div>
-        <a href="index.html" class="nav-logo" style="margin-bottom:.8rem;display:inline-flex;">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:.8rem;">
           <div class="nav-logo-icon">ر</div>
-          <div class="nav-logo-text">
-            <span class="brand">رواية تك</span>
-            <span class="tagline">Roaya Tech Agency</span>
-          </div>
+          <div class="nav-logo-text"><span class="brand">رواية تك</span><span class="tag">Roaya Tech Agency</span></div>
         </a>
-        <p class="footer-brand-text">وكالة متخصصة في تصميم المواقع الإلكترونية الاحترافية للعيادات والمراكز الطبية السعودية. نؤمن بأن كل عيادة تستحق حضوراً رقمياً يليق بها.</p>
+        <p class="footer-brand">وكالة متخصصة في تصميم المواقع الإلكترونية الاحترافية للعيادات والمراكز الطبية السعودية. نؤمن بأن كل عيادة تستحق حضوراً رقمياً يليق بمستوى طبيبها.</p>
         <div class="footer-social">
           <a href="#" class="social-icon" title="تويتر">𝕏</a>
           <a href="#" class="social-icon" title="انستغرام">📷</a>
           <a href="#" class="social-icon" title="لينكدإن">in</a>
-          <a href="https://wa.me/966500000000" target="_blank" class="social-icon" title="واتساب">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-          </a>
+          <a href="https://wa.me/966500000000" target="_blank" class="social-icon" title="واتساب"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg></a>
         </div>
       </div>
-
       <div>
         <h4 class="footer-title">روابط سريعة</h4>
         <ul class="footer-links">
-          <li><a href="index.html">› الرئيسية</a></li>
-          <li><a href="services.html">› خدماتنا</a></li>
-          <li><a href="portfolio.html">› أعمالنا</a></li>
-          <li><a href="about.html">› من نحن</a></li>
-          <li><a href="faq.html">› الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">› تواصل معنا</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="services.html">خدماتنا</a></li>
+          <li><a href="portfolio.html">أعمالنا</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-title">خدماتنا</h4>
         <ul class="footer-links">
-          <li><a href="services.html">› تصميم مواقع العيادات</a></li>
-          <li><a href="services.html">› تصميم متجاوب</a></li>
-          <li><a href="services.html">› حجز المواعيد</a></li>
-          <li><a href="services.html">› تحسين SEO</a></li>
-          <li><a href="services.html">› صيانة المواقع</a></li>
-          <li><a href="services.html">› تكامل واتساب</a></li>
+          <li><a href="services.html">تصميم مواقع العيادات</a></li>
+          <li><a href="services.html">تصميم متجاوب</a></li>
+          <li><a href="services.html">حجز المواعيد</a></li>
+          <li><a href="services.html">تحسين SEO</a></li>
+          <li><a href="services.html">صيانة المواقع</a></li>
+          <li><a href="services.html">تكامل واتساب</a></li>
         </ul>
       </div>
-
       <div>
         <h4 class="footer-title">تواصل معنا</h4>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon">📱</div>
-          <div>
-            <div style="color:var(--white);font-weight:600;margin-bottom:.1rem;">واتساب</div>
-            <div>+966 50 000 0000</div>
-          </div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon">✉</div>
-          <div>
-            <div style="color:var(--white);font-weight:600;margin-bottom:.1rem;">البريد الإلكتروني</div>
-            <div>info@roayatech.sa</div>
-          </div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon">⏱</div>
-          <div>
-            <div style="color:var(--white);font-weight:600;margin-bottom:.1rem;">ساعات العمل</div>
-            <div>الأحد – الخميس: 9ص – 9م</div>
-          </div>
-        </div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📱</div><div><div style="color:white;font-weight:600;font-size:.82rem;">واتساب</div><div>+966 50 000 0000</div></div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">✉</div><div><div style="color:white;font-weight:600;font-size:.82rem;">البريد</div><div>info@roayatech.sa</div></div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">⏱</div><div><div style="color:white;font-weight:600;font-size:.82rem;">نرد خلال</div><div>ساعتين</div></div></div>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    © 2025 <span>رواية تك</span> — جميع الحقوق محفوظة | صُنع بـ ❤ للعيادات السعودية
-  </div>
+  <div class="footer-bottom">© 2025 <span>رواية تك</span> — جميع الحقوق محفوظة | صُنع بـ ❤ للعيادات السعودية</div>
 </footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/966500000000?text=السلام عليكم، أريد الاستفسار عن خدماتكم" target="_blank" class="float-wa" title="تواصل عبر واتساب">
+<!-- Float WA -->
+<a href="https://wa.me/966500000000?text=السلام عليكم، أريد الاستفسار عن خدماتكم" target="_blank" class="float-wa" title="واتساب">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.118 1.528 5.845L0 24l6.335-1.652A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.854 0-3.584-.504-5.073-1.385l-.363-.215-3.761.981.999-3.667-.236-.376A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
 </a>
 
 <script>
-  // Navbar scroll effect
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // Mobile menu toggle
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-
-  // FAQ accordion
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // AOS-like scroll animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('aos-animate'); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('[data-aos]').forEach((el, i) => {
-    const delay = el.dataset.aosDelay || 0;
-    el.style.transitionDelay = delay + 'ms';
-    observer.observe(el);
-  });
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('aos-animate'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('[data-aos]').forEach(el => {
+  el.style.transitionDelay = (el.dataset.aosDelay || 0) + 'ms';
+  obs.observe(el);
+});
 </script>
 </body>
 </html>
